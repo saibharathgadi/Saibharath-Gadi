@@ -25,7 +25,7 @@
       "telephone": "+91-7013264201",
       "url": "https://saibharathgadi.github.io/Saibharath-Gadi/",
       "image": "https://saibharathgadi.github.io/Saibharath-Gadi/assets/profile/saibharath-profile.jpg",
-      "sameAs": ["https://www.linkedin.com/in/gadisaibharath"],
+      "sameAs": ["https://www.linkedin.com/in/gadisaibharath", "https://www.instagram.com/saibharath.official/"],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Tirupati",
@@ -634,6 +634,33 @@
       object-fit: contain;
     }
 
+    .cert-group {
+      display: grid;
+      gap: 18px;
+      margin-bottom: 34px;
+    }
+
+    .cert-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .cert-group-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0;
+      color: var(--soft);
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .cert-group-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
     .cert-meta {
       margin: -4px 0 14px;
       color: #a5b4fc;
@@ -889,6 +916,12 @@
       background: var(--accent-soft);
     }
 
+    .icon-link svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+
     .reveal {
       opacity: 0;
       transform: translateY(22px);
@@ -1124,7 +1157,7 @@
           <h2 class="section-title" id="certificationsTitle">Verified learning across marketing, web, design, data, and AI.</h2>
           <p class="section-intro">Select any certificate to view its full credential or source document.</p>
         </div>
-        <div class="grid grid-3" id="certificationsGrid"></div>
+        <div id="certificationsGrid"></div>
       </div>
     </section>
 
@@ -1233,6 +1266,10 @@
               <strong>LinkedIn</strong>
               <span>linkedin.com/in/gadisaibharath</span>
             </a>
+            <a class="contact-method" href="https://www.instagram.com/saibharath.official/" target="_blank" rel="noopener">
+              <strong>Instagram</strong>
+              <span>instagram.com/saibharath.official</span>
+            </a>
             <div class="contact-method">
               <strong>Location</strong>
               <span>Tirupati, Andhra Pradesh</span>
@@ -1274,9 +1311,29 @@
     <div class="container footer-inner">
       <p>&copy; <span id="year"></span> Gadi Sai Bharath. Digital Marketing Specialist.</p>
       <div class="social-links" aria-label="Social links">
-        <a href="mailto:saibharathgadi@gmail.com" aria-label="Email">Email</a>
-        <a href="https://www.linkedin.com/in/gadisaibharath" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-        <a href="#home" aria-label="Back to top">Up</a>
+        <a class="icon-link" href="mailto:saibharathgadi@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+            <path d="m22 7-10 6L2 7"></path>
+          </svg>
+        </a>
+        <a class="icon-link" href="https://www.linkedin.com/in/gadisaibharath" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.54V9H7.1v11.45ZM22.23 0H1.76C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.76 24h20.47c.97 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0Z"></path>
+          </svg>
+        </a>
+        <a class="icon-link" href="https://www.instagram.com/saibharath.official/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="20" x="2" y="2" rx="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"></path>
+            <path d="M17.5 6.5h.01"></path>
+          </svg>
+        </a>
+        <a class="icon-link" href="#home" aria-label="Back to top">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m18 15-6-6-6 6"></path>
+          </svg>
+        </a>
       </div>
     </div>
   </footer>
@@ -1296,6 +1353,7 @@
           title: "Social Media Marketing Certification",
           issuer: "HubSpot Academy",
           date: "Valid February 2026 - March 2028",
+          group: "Digital Marketing Certifications",
           image: "assets/certificates/previews/hubspot-social-media.jpg",
           href: "assets/certificates/previews/hubspot-social-media.jpg"
         },
@@ -1303,13 +1361,23 @@
           title: "Fundamentals of Digital Marketing",
           issuer: "Google",
           date: "February 2025",
+          group: "Digital Marketing Certifications",
           image: "assets/certificates/previews/google-digital-marketing.jpg",
           href: "assets/certificates/previews/google-digital-marketing.jpg"
+        },
+        {
+          title: "AI Powered Digital Marketing Online Training",
+          issuer: "Frontlines EduTech Private Limited",
+          date: "May 2025",
+          group: "Digital Marketing Certifications",
+          image: "assets/certificates/frontlines-ai-digital-marketing.png",
+          href: "assets/certificates/frontlines-ai-digital-marketing.png"
         },
         {
           title: "Use WordPress to Create a Blog for Your Business",
           issuer: "Coursera",
           date: "January 2025",
+          group: "Web, WordPress & Data Certifications",
           image: "assets/certificates/previews/coursera-wordpress-blog.jpg",
           href: "https://coursera.org/verify/HSPV418L3NSE"
         },
@@ -1317,6 +1385,7 @@
           title: "Build a Free Website with WordPress",
           issuer: "Coursera",
           date: "January 2025",
+          group: "Web, WordPress & Data Certifications",
           image: "assets/certificates/previews/coursera-free-wordpress-website.jpg",
           href: "https://coursera.org/verify/KC4URFTMBLRP"
         },
@@ -1324,6 +1393,7 @@
           title: "Marketing with Canva",
           issuer: "Canva Design School",
           date: "May 2025",
+          group: "Design & AI Certifications",
           image: "assets/certificates/previews/marketing-with-canva.jpg",
           href: "assets/certificates/marketing-with-canva.pdf"
         },
@@ -1331,13 +1401,23 @@
           title: "Canva for Work",
           issuer: "Canva Design School",
           date: "May 2025",
+          group: "Design & AI Certifications",
           image: "assets/certificates/previews/canva-for-work.jpg",
           href: "assets/certificates/canva-for-work.pdf"
+        },
+        {
+          title: "AI Powered Graphic Design",
+          issuer: "Frontlines EduTech Private Limited",
+          date: "May 2026",
+          group: "Design & AI Certifications",
+          image: "assets/certificates/frontlines-ai-graphic-design.png",
+          href: "assets/certificates/frontlines-ai-graphic-design.png"
         },
         {
           title: "Build Your Own Static Website",
           issuer: "NxtWave",
           date: "February 2023",
+          group: "Web, WordPress & Data Certifications",
           image: "assets/certificates/previews/nxtwave-static-website.jpg",
           href: "assets/certificates/nxtwave-static-website.pdf"
         },
@@ -1345,6 +1425,7 @@
           title: "Build Your Own Responsive Website",
           issuer: "NxtWave",
           date: "March 2023",
+          group: "Web, WordPress & Data Certifications",
           image: "assets/certificates/previews/nxtwave-responsive-website.jpg",
           href: "assets/certificates/nxtwave-responsive-website.pdf"
         },
@@ -1352,6 +1433,7 @@
           title: "Introduction to Databases",
           issuer: "NxtWave",
           date: "March 2023",
+          group: "Web, WordPress & Data Certifications",
           image: "assets/certificates/previews/nxtwave-introduction-to-databases.jpg",
           href: "assets/certificates/nxtwave-introduction-to-databases.pdf"
         },
@@ -1359,6 +1441,7 @@
           title: "Introduction to MS Excel",
           issuer: "Simplilearn SkillUp",
           date: "February 2025",
+          group: "Productivity & Operations Certifications",
           image: "assets/certificates/previews/simplilearn-excel.jpg",
           href: "assets/certificates/previews/simplilearn-excel.jpg"
         },
@@ -1366,6 +1449,7 @@
           title: "Getting Started with Microsoft Excel",
           issuer: "Coursera",
           date: "January 2025",
+          group: "Productivity & Operations Certifications",
           image: "assets/certificates/previews/coursera-microsoft-excel.jpg",
           href: "https://coursera.org/verify/TUMBQ6DGKPWT"
         },
@@ -1373,6 +1457,7 @@
           title: "The Field Guide to Human-Centered Design",
           issuer: "Canva Design School",
           date: "May 2025",
+          group: "Design & AI Certifications",
           image: "assets/certificates/previews/human-centered-design.jpg",
           href: "assets/certificates/human-centered-design.pdf"
         },
@@ -1380,6 +1465,7 @@
           title: "AI in the Classroom",
           issuer: "Canva Design School",
           date: "May 2025",
+          group: "Design & AI Certifications",
           image: "assets/certificates/previews/ai-in-the-classroom.jpg",
           href: "assets/certificates/ai-in-the-classroom.pdf"
         },
@@ -1387,6 +1473,7 @@
           title: "XPM 4.0 Fundamentals",
           issuer: "NxtWave",
           date: "March 2023",
+          group: "Productivity & Operations Certifications",
           image: "assets/certificates/previews/nxtwave-xpm-fundamentals.jpg",
           href: "assets/certificates/nxtwave-xpm-fundamentals.pdf"
         }
@@ -1453,25 +1540,35 @@
 
     const renderCertifications = () => {
       const grid = document.querySelector("#certificationsGrid");
-      portfolioData.certifications.forEach((certification) => {
-        const card = createElement("article", "card cert-card reveal");
-        const imageWrap = createElement("div", "cert-image");
-        const image = document.createElement("img");
-        image.src = certification.image;
-        image.alt = `${certification.title} certificate from ${certification.issuer}`;
-        image.loading = "lazy";
-        image.width = 1000;
-        image.height = 700;
-        imageWrap.append(image);
-        card.append(imageWrap);
-        card.append(createElement("h3", "", certification.title));
-        card.append(createElement("p", "cert-meta", `${certification.issuer} | ${certification.date}`));
-        const link = createElement("a", "cert-link", "View certificate");
-        link.href = certification.href;
-        link.target = "_blank";
-        link.rel = "noopener";
-        card.append(link);
-        grid.append(card);
+      const groups = [...new Set(portfolioData.certifications.map((certification) => certification.group))];
+      groups.forEach((group) => {
+        const section = createElement("div", "cert-group");
+        section.append(createElement("h3", "cert-group-title", group));
+        const cards = createElement("div", "grid grid-3");
+        portfolioData.certifications
+          .filter((certification) => certification.group === group)
+          .forEach((certification) => {
+            const card = createElement("article", "card cert-card reveal");
+            const imageWrap = createElement("div", "cert-image");
+            const image = document.createElement("img");
+            image.src = certification.image;
+            image.alt = `${certification.title} certificate from ${certification.issuer}`;
+            image.loading = "lazy";
+            image.width = 1000;
+            image.height = 700;
+            imageWrap.append(image);
+            card.append(imageWrap);
+            card.append(createElement("h3", "", certification.title));
+            card.append(createElement("p", "cert-meta", `${certification.issuer} | ${certification.date}`));
+            const link = createElement("a", "cert-link", "View certificate");
+            link.href = certification.href;
+            link.target = "_blank";
+            link.rel = "noopener";
+            card.append(link);
+            cards.append(card);
+          });
+        section.append(cards);
+        grid.append(section);
       });
     };
 
