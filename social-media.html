@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Social media design and creative content portfolio of Gadi Sai Bharath — brand campaigns, event creatives, and illustrated social content for EasyStepIn, Elev8, and Aarogya Aahar.">
+  <meta name="author" content="Gadi Sai Bharath">
+  <link rel="canonical" href="https://saibharathgadi.github.io/Saibharath-Gadi/social-media.html">
+  <meta name="theme-color" content="#0b1020">
+  <title>Social Media & Creative Portfolio | Gadi Sai Bharath</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #070a12;
+      --bg-soft: #0b1020;
+      --panel: rgba(17, 24, 39, .74);
+      --panel-strong: rgba(20, 28, 48, .92);
+      --text: #f8fafc;
+      --muted: #a7b0c2;
+      --soft: #d8deea;
+      --line: rgba(148, 163, 184, .18);
+      --accent: #4f46e5;
+      --accent-soft: rgba(79, 70, 229, .16);
+      --accent-line: rgba(129, 140, 248, .4);
+      --success: #2dd4bf;
+      --warning: #f6c177;
+      --shadow: 0 24px 80px rgba(0, 0, 0, .36);
+      --radius: 8px;
+      --max: 1160px;
+      --nav-h: 72px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-h) + 24px);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(79, 70, 229, .14), transparent 32rem),
+        linear-gradient(180deg, #070a12 0%, #0b1020 45%, #070a12 100%);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+    }
+
+    body.menu-open { overflow: hidden; }
+
+    a { color: inherit; text-decoration: none; }
+
+    button { border: 0; cursor: pointer; font: inherit; }
+
+    img { max-width: 100%; }
+
+    ::selection {
+      background: rgba(79, 70, 229, .45);
+      color: #fff;
+    }
+
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: 12px;
+      z-index: 100;
+      transform: translateY(-140%);
+      border-radius: var(--radius);
+      background: #fff;
+      color: #111827;
+      padding: 10px 14px;
+      font-weight: 700;
+      transition: transform .2s ease;
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .container {
+      width: min(100% - 40px, var(--max));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      min-height: var(--nav-h);
+      border-bottom: 1px solid transparent;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 10, 18, .72);
+      transition: border-color .2s ease, background .2s ease;
+    }
+
+    .site-header.scrolled {
+      border-color: var(--line);
+      background: rgba(7, 10, 18, .9);
+    }
+
+    .nav {
+      min-height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--accent-line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(79, 70, 229, .2), rgba(255, 255, 255, .05));
+      color: #fff;
+      box-shadow: 0 12px 34px rgba(79, 70, 229, .18);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      border-radius: 999px;
+      padding: 9px 12px;
+      transition: color .18s ease, background .18s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: rgba(255, 255, 255, .06);
+      color: var(--text);
+      outline: 0;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .06);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      margin: 4px auto;
+      border-radius: 999px;
+      background: currentColor;
+      transition: transform .18s ease, opacity .18s ease;
+    }
+
+    .menu-open .menu-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .menu-open .menu-toggle span:nth-child(2) { opacity: 0; }
+    .menu-open .menu-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    main { overflow: hidden; }
+
+    section { padding: 80px 0; position: relative; }
+
+    .hero-social {
+      min-height: calc(72vh - var(--nav-h));
+      display: grid;
+      align-items: center;
+      padding: 68px 0 56px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .05);
+      color: var(--soft);
+      padding: 7px 11px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 0 5px rgba(45, 212, 191, .12);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 820px;
+      margin-bottom: 12px;
+      font-size: clamp(36px, 5.4vw, 60px);
+      line-height: 1.04;
+      font-weight: 800;
+    }
+
+    .hero-social h2 {
+      margin: 0 0 22px;
+      max-width: 760px;
+      color: var(--soft);
+      font-size: clamp(18px, 2.4vw, 24px);
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: clamp(16px, 1.8vw, 18px);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      font-weight: 800;
+      line-height: 1;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease, color .18s ease, box-shadow .18s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn:focus-visible {
+      outline: 3px solid rgba(129, 140, 248, .36);
+      outline-offset: 3px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 18px 45px rgba(79, 70, 229, .34);
+    }
+
+    .btn-primary:hover { background: #5b54f0; }
+
+    .btn-secondary {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .06);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-line);
+      background: rgba(79, 70, 229, .12);
+    }
+
+    .btn-small {
+      min-height: 38px;
+      padding: 9px 13px;
+      font-size: 13px;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      margin: 0 0 10px;
+      color: #a5b4fc;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin-bottom: 12px;
+      font-size: clamp(28px, 3.7vw, 42px);
+      line-height: 1.08;
+    }
+
+    .section-intro {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .grid { display: grid; gap: 18px; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 16px 50px rgba(0, 0, 0, .2);
+      padding: 22px;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-line);
+      background: rgba(24, 31, 51, .9);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, .28);
+    }
+
+    .tool-card {
+      min-height: 74px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      text-align: center;
+    }
+
+    .tool-card strong { font-size: 14px; }
+    .tool-card span { color: var(--muted); font-size: 12px; }
+
+    .tag {
+      display: inline-flex;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .05);
+      color: var(--soft);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1;
+      padding: 9px 11px;
+    }
+
+    .brand-card {
+      display: grid;
+      gap: 16px;
+    }
+
+    .brand-card-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand-card h3 { font-size: 20px; margin-bottom: 4px; }
+
+    .brand-meta {
+      color: #a5b4fc;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .brand-card p {
+      color: var(--soft);
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    .content-tags {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .content-tags li { display: flex; gap: 10px; }
+
+    .content-tags li::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      flex: 0 0 auto;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px var(--accent-soft);
+    }
+
+    .brand-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .cert-note {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cert-note a {
+      color: #a5b4fc;
+      font-weight: 700;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-legal { font-size: 13px; color: #91a0b8; margin: 0; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 1040px) {
+      .nav-links {
+        position: fixed;
+        inset: var(--nav-h) 16px auto;
+        display: grid;
+        max-height: calc(100vh - var(--nav-h) - 24px);
+        overflow: auto;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(11, 16, 32, .98);
+        padding: 12px;
+        box-shadow: var(--shadow);
+        transform: translateY(-12px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .18s ease, transform .18s ease;
+      }
+      .menu-open .nav-links { opacity: 1; pointer-events: auto; transform: translateY(0); }
+      .menu-toggle { display: inline-flex; }
+      .grid-3, .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(100% - 28px, var(--max)); }
+      section { padding: 58px 0; }
+      .cta-row .btn { width: 100%; }
+      .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="siteHeader">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Gadi Sai Bharath home">
+        <span class="brand-mark" aria-hidden="true">GS</span>
+        <span>Gadi Sai Bharath</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Main Portfolio</a>
+        <a href="#creative-tools">Creative Tools</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="index.html#certifications">Certifications</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero-social" id="home" aria-labelledby="heroTitle">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow">Design &amp; Social Content Work</p>
+          <h1 id="heroTitle">Social Media &amp; Creative Design Portfolio</h1>
+          <h2>Where digital marketing strategy meets hands-on visual design.</h2>
+          <p class="hero-copy">A closer look at the social content, campaign creatives, and brand design work I've contributed to across EasyStepIn, Elev8, and my personal nutrition content project, Aarogya Aahar — plus the design tools behind it.</p>
+          <div class="cta-row" aria-label="Page actions">
+            <a class="btn btn-primary" href="#case-studies">View Case Studies</a>
+            <a class="btn btn-secondary" href="index.html">Back to Main Portfolio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="creative-tools" aria-labelledby="creativeToolsTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Creative Tools</p>
+          <h2 class="section-title" id="creativeToolsTitle">Design software I use to create social and campaign content.</h2>
+          <p class="section-intro">Alongside marketing strategy and SEO, I design the visual content myself — social posts, event creatives, and campaign assets.</p>
+        </div>
+        <div class="grid grid-4">
+          <article class="card tool-card reveal">
+            <strong>Canva</strong>
+            <span>Advanced</span>
+          </article>
+          <article class="card tool-card reveal">
+            <strong>Adobe Express</strong>
+            <span>Social &amp; campaign graphics</span>
+          </article>
+          <article class="card tool-card reveal">
+            <strong>Figma</strong>
+            <span>Layout &amp; design collaboration</span>
+          </article>
+          <article class="card tool-card reveal">
+            <strong>Adobe Photoshop</strong>
+            <span>Basics</span>
+          </article>
+        </div>
+        <p class="cert-note reveal">Canva skills backed by certifications — <a href="index.html#certifications">Canva for Work</a> and <a href="index.html#certifications">Marketing with Canva</a> from Canva Design School. See the full list on the <a href="index.html#certifications">Certifications</a> section of the main portfolio.</p>
+      </div>
+    </section>
+
+    <section id="case-studies" aria-labelledby="caseStudiesTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Brand Case Studies</p>
+          <h2 class="section-title" id="caseStudiesTitle">Social content and creative work across three brands.</h2>
+          <p class="section-intro">Each brand called for a different visual voice — corporate and event-driven for EasyStepIn, illustrated and product-led for Elev8, and educational for Aarogya Aahar.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card brand-card reveal">
+            <div class="brand-card-head">
+              <h3>EasyStepIn</h3>
+            </div>
+            <p class="brand-meta">Information Technology Company · Bangalore</p>
+            <p>As part of the marketing team, I contribute to EasyStepIn's social presence across LinkedIn and Instagram — covering global event sponsorships, festival and culture posts, leadership spotlights, and company milestones.</p>
+            <ul class="content-tags">
+              <li>Event sponsorship &amp; booth promotion graphics (Boomi World, Agentic AI Summit, InfoComm)</li>
+              <li>Festival and celebration creatives</li>
+              <li>Leadership and team recognition posts</li>
+              <li>Company milestone announcements</li>
+            </ul>
+            <div class="brand-links">
+              <a class="btn btn-secondary btn-small" href="https://www.instagram.com/easystepin_/" target="_blank" rel="noopener">Instagram</a>
+              <a class="btn btn-secondary btn-small" href="https://www.linkedin.com/company/easystepin/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </article>
+
+          <article class="card brand-card reveal">
+            <div class="brand-card-head">
+              <h3>Elev8</h3>
+            </div>
+            <p class="brand-meta">Employee Experience SaaS Platform</p>
+            <p>Supported product marketing and social content for Elev8, an employee recognition and engagement platform — translating HR and workplace-culture themes into an illustrated, brand-consistent visual style.</p>
+            <ul class="content-tags">
+              <li>Illustrated festival &amp; seasonal campaigns</li>
+              <li>HR and workplace-culture infographics</li>
+              <li>Product value and feature graphics</li>
+              <li>Event and conference promotion</li>
+            </ul>
+            <div class="brand-links">
+              <a class="btn btn-secondary btn-small" href="https://www.instagram.com/elev8_ind" target="_blank" rel="noopener">Instagram</a>
+              <a class="btn btn-secondary btn-small" href="https://www.linkedin.com/company/elev8ind/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </article>
+
+          <article class="card brand-card reveal">
+            <div class="brand-card-head">
+              <h3>Aarogya Aahar</h3>
+            </div>
+            <p class="brand-meta">Personal Nutrition &amp; Wellness Content Project</p>
+            <p>Drawing on my food science and nutrition background (M.Sc. Food Science &amp; Technology, B.Sc. Food Science &amp; Nutrition), I run Aarogya Aahar — an Instagram page sharing practical nutrition tips, recipes, and healthy-habit content.</p>
+            <ul class="content-tags">
+              <li>Nutrition and food-fact infographics</li>
+              <li>Recipe and meal-prep carousels</li>
+              <li>Health-awareness and festival wellness posts</li>
+            </ul>
+            <div class="brand-links">
+              <a class="btn btn-secondary btn-small" href="https://www.instagram.com/aarogy_a_ahar" target="_blank" rel="noopener">Instagram</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-legal">&copy; <span id="year"></span> Gadi Sai Bharath. All Rights Reserved.</p>
+      <a class="btn btn-secondary btn-small" href="index.html">Back to Main Portfolio</a>
+    </div>
+  </footer>
+
+  <script>
+    const setupNavigation = () => {
+      const header = document.querySelector("#siteHeader");
+      const menuToggle = document.querySelector("#menuToggle");
+      const navLinks = document.querySelector("#navLinks");
+
+      const syncHeader = () => header.classList.toggle("scrolled", window.scrollY > 10);
+      syncHeader();
+      window.addEventListener("scroll", syncHeader, { passive: true });
+
+      menuToggle.addEventListener("click", () => {
+        const isOpen = document.body.classList.toggle("menu-open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      navLinks.addEventListener("click", (event) => {
+        if (event.target.matches("a")) {
+          document.body.classList.remove("menu-open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    };
+
+    const setupReveal = () => {
+      const items = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        items.forEach((item) => item.classList.add("visible"));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14 });
+
+      items.forEach((item) => observer.observe(item));
+    };
+
+    setupNavigation();
+    setupReveal();
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
