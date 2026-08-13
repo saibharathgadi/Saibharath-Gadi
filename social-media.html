@@ -190,6 +190,30 @@
       padding: 68px 0 56px;
     }
 
+    .hero-social-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(220px, .6fr);
+      gap: clamp(28px, 5vw, 60px);
+      align-items: center;
+    }
+
+    .hero-photo {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .045));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      display: block;
+      object-fit: cover;
+      object-position: center 28%;
+    }
+
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -485,6 +509,8 @@
       .menu-open .nav-links { opacity: 1; pointer-events: auto; transform: translateY(0); }
       .menu-toggle { display: inline-flex; }
       .grid-3, .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-social-grid { grid-template-columns: 1fr; }
+      .hero-photo { max-width: 320px; }
     }
 
     @media (max-width: 760px) {
@@ -522,7 +548,7 @@
 
   <main id="main">
     <section class="hero-social" id="home" aria-labelledby="heroTitle">
-      <div class="container">
+      <div class="container hero-social-grid">
         <div class="reveal">
           <p class="eyebrow">Design &amp; Social Content Work</p>
           <h1 id="heroTitle">Social Media &amp; Creative Design Portfolio</h1>
@@ -533,6 +559,9 @@
             <a class="btn btn-secondary" href="index.html">Back to Main Portfolio</a>
           </div>
         </div>
+        <aside class="hero-photo reveal" aria-label="Photo of Gadi Sai Bharath">
+          <img src="assets/profile/saibharath-profile.jpg" alt="Gadi Sai Bharath, Digital Marketing Specialist" width="1400" height="1400">
+        </aside>
       </div>
     </section>
 
