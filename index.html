@@ -18,6 +18,7 @@
   <meta name="twitter:image" content="https://saibharathgadi.github.io/Saibharath-Gadi/assets/profile/saibharath-profile.jpg">
   <link rel="canonical" href="https://saibharathgadi.github.io/Saibharath-Gadi/">
   <meta name="theme-color" content="#0b1020">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <title>Gadi Sai Bharath | Digital Marketing Specialist</title>
   <script type="application/ld+json">
     {
@@ -210,6 +211,11 @@
       background: rgba(255, 255, 255, .06);
       color: var(--text);
       outline: 0;
+    }
+
+    .nav-links a.active {
+      background: var(--accent-soft);
+      color: var(--text);
     }
 
     .menu-toggle {
@@ -1709,6 +1715,29 @@
       });
     };
 
+    const setupScrollSpy = () => {
+      const navLinks = document.querySelector("#navLinks");
+      const links = [...navLinks.querySelectorAll("a[href^='#']")];
+      const sections = links
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+      if (!sections.length || !("IntersectionObserver" in window)) return;
+
+      const setActive = (id) => {
+        links.forEach((link) => {
+          link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+        });
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting);
+        if (visible.length) setActive(visible[0].target.id);
+      }, { rootMargin: "-45% 0px -50% 0px" });
+
+      sections.forEach((section) => observer.observe(section));
+    };
+
     const setupReveal = () => {
       const items = document.querySelectorAll(".reveal");
       if (!("IntersectionObserver" in window)) {
@@ -1786,6 +1815,7 @@
     renderCertifications();
     renderProjects();
     setupNavigation();
+    setupScrollSpy();
     setupReveal();
     setupContactForm();
 

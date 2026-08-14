@@ -5,8 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Social media design and creative content portfolio of Gadi Sai Bharath — brand campaigns, event creatives, and illustrated social content for EasyStepIn, Elev8, and Aarogya Aahar.">
   <meta name="author" content="Gadi Sai Bharath">
+  <meta property="og:title" content="Social Media & Creative Portfolio | Gadi Sai Bharath">
+  <meta property="og:description" content="Social content, campaign creatives, and design tools behind my work for EasyStepIn, Elev8, and Aarogya Aahar.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saibharathgadi.github.io/Saibharath-Gadi/social-media.html">
+  <meta property="og:image" content="https://saibharathgadi.github.io/Saibharath-Gadi/assets/profile/saibharath-profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Social Media & Creative Portfolio | Gadi Sai Bharath">
+  <meta name="twitter:description" content="Social content, campaign creatives, and design tools behind my work for EasyStepIn, Elev8, and Aarogya Aahar.">
+  <meta name="twitter:image" content="https://saibharathgadi.github.io/Saibharath-Gadi/assets/profile/saibharath-profile.jpg">
   <link rel="canonical" href="https://saibharathgadi.github.io/Saibharath-Gadi/social-media.html">
   <meta name="theme-color" content="#0b1020">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <title>Social Media & Creative Portfolio | Gadi Sai Bharath</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -150,6 +160,11 @@
       background: rgba(255, 255, 255, .06);
       color: var(--text);
       outline: 0;
+    }
+
+    .nav-links a.active {
+      background: var(--accent-soft);
+      color: var(--text);
     }
 
     .menu-toggle {
@@ -688,6 +703,29 @@
       });
     };
 
+    const setupScrollSpy = () => {
+      const navLinks = document.querySelector("#navLinks");
+      const links = [...navLinks.querySelectorAll("a[href^='#']")];
+      const sections = links
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+      if (!sections.length || !("IntersectionObserver" in window)) return;
+
+      const setActive = (id) => {
+        links.forEach((link) => {
+          link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+        });
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting);
+        if (visible.length) setActive(visible[0].target.id);
+      }, { rootMargin: "-45% 0px -50% 0px" });
+
+      sections.forEach((section) => observer.observe(section));
+    };
+
     const setupReveal = () => {
       const items = document.querySelectorAll(".reveal");
       if (!("IntersectionObserver" in window)) {
@@ -708,6 +746,7 @@
     };
 
     setupNavigation();
+    setupScrollSpy();
     setupReveal();
     document.querySelector("#year").textContent = new Date().getFullYear();
   </script>
