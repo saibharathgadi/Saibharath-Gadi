@@ -1470,7 +1470,6 @@
           <input type="hidden" name="access_key" value="32aa3f42-32a1-44c1-90ec-a88cd66ad4c1">
           <input type="hidden" name="subject" value="New Portfolio Lead - Sai Bharath Website">
           <input type="hidden" name="from_name" value="Sai Bharath Portfolio">
-          <input type="hidden" name="redirect" value="">
           <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display: none;">
           <div class="form-row">
             <div class="field">
@@ -1923,7 +1922,11 @@
         try {
           const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
-            body: data,
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify(Object.fromEntries(data)),
             signal: controller.signal
           });
           const result = await response.json();
@@ -1943,7 +1946,9 @@
           resumeLink.click();
         } catch (error) {
           note.style.color = "var(--warning)";
-          note.textContent = "Something went wrong. Please try again or email me directly.";
+          note.textContent = error.name === "AbortError"
+            ? "The request timed out. Please try again or email me directly."
+            : "Your message could not be sent. Please try again or email me directly.";
         } finally {
           clearTimeout(timeout);
           form.removeAttribute("aria-busy");
