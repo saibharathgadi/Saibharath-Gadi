@@ -2304,7 +2304,7 @@
     const setupContactForm = () => {
       const form = document.querySelector("#contactForm");
       const note = document.querySelector("#formNote");
-      const resumeUrl = "assets/resume/Gadi_Sai_Bharath_Digital_Marketing_Specialist_Resume.pdf";
+      const resumeUrl = "assets/resume/Gadi_Sai_Bharath_Digital_Marketing_Associate_Resume.pdf";
 
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -2350,7 +2350,7 @@
           form.reset();
           const resumeLink = document.createElement("a");
           resumeLink.href = resumeUrl;
-          resumeLink.download = "Gadi_Sai_Bharath_Digital_Marketing_Specialist_Resume.pdf";
+          resumeLink.download = "Gadi_Sai_Bharath_Digital_Marketing_Associate_Resume.pdf";
           resumeLink.className = "cert-link";
           resumeLink.textContent = "Download Resume";
           note.append(document.createElement("br"), resumeLink);
