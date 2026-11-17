@@ -1075,7 +1075,20 @@
 
     .timeline {
       position: relative;
-      max-width: 880px;
+    }
+
+    .exp-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .exp-side .subhead { margin-top: 0; }
+
+    .edu-stack {
+      display: grid;
+      gap: 18px;
     }
 
     .timeline::before {
@@ -1131,8 +1144,9 @@
 
     .faq-list {
       display: grid;
-      gap: 12px;
-      max-width: 860px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 18px;
+      align-items: start;
     }
 
     .faq-item {
@@ -1577,6 +1591,7 @@
       .mini-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .mini-stat:nth-child(2) { border-right: 0; }
       .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .exp-layout { grid-template-columns: 1fr; }
       .nav-links a.nav-cta { margin: 4px 0 0; text-align: center; }
     }
 
@@ -1600,6 +1615,7 @@
 
       .mini-stat:last-child { border-bottom: 0; }
       .facts-list div { grid-template-columns: 1fr; gap: 2px; }
+      .faq-list { grid-template-columns: 1fr; }
       .contact-main { flex-direction: column; align-items: flex-start; gap: 2px; }
       .profile-image { min-height: 380px; }
       .profile-image img { min-height: 380px; }
@@ -1752,59 +1768,62 @@
           <p class="section-kicker">Experience</p>
           <h2 class="section-title" id="experienceTitle">Digital marketing, CRM and sales experience.</h2>
         </div>
-        <div class="timeline reveal">
-          <article class="card timeline-item">
-            <span class="timeline-dot" aria-hidden="true"></span>
-            <p class="timeline-meta">EasyStepIn IT Services Pvt Ltd | August 2025 - Present</p>
-            <h3>Digital Marketing Associate</h3>
-            <p>Supporting EasyStepIn and Elev8 through SEO, WordPress, LinkedIn advertising, HubSpot automation, content marketing, product marketing, and AI-powered search initiatives.</p>
-            <ul class="responsibility-list">
-              <li>Manage SEO and website work across the EasyStepIn and Elev8 websites.</li>
-              <li>Support LinkedIn campaigns for B2B lead generation.</li>
-              <li>Write blogs, e-books and whitepapers, and manage landing pages, newsletters, and website content.</li>
-              <li>Build HubSpot email templates and workflows, and work with forms, campaigns, and reporting.</li>
-              <li>Create campaign, event, social, and sales enablement assets.</li>
-              <li>Support AEO, GEO, Boomi World, and InfoComm initiatives.</li>
-              <li>Represented ELEV8 at SHRM UnConference '26 in Hyderabad.</li>
-              <li>Attending the SHRM Annual Conference in Delhi for ELEV8 on 26 and 27 November 2026.</li>
-            </ul>
-          </article>
-          <article class="card timeline-item">
-            <span class="timeline-dot" aria-hidden="true"></span>
-            <p class="timeline-meta">EasyStepIn IT Services Pvt Ltd | April 2025 - July 2025</p>
-            <h3>Digital Marketing Intern</h3>
-            <p>Started with social media design and moved into website and SEO work during the internship.</p>
-            <ul class="responsibility-list">
-              <li>Designed social media posts for LinkedIn and Instagram in Canva, following brand guidelines.</li>
-              <li>Supported content calendars and event promotions.</li>
-              <li>Began working on SEO, keyword research, and WordPress updates.</li>
-            </ul>
-          </article>
-          <article class="card timeline-item">
-            <span class="timeline-dot" aria-hidden="true"></span>
-            <p class="timeline-meta">Hindustan Unilever Distribution | June 2021 - May 2024</p>
-            <h3>CRM &amp; Sales Executive</h3>
-            <p>Managed CRM and ERP systems for sales operations, customer management, reporting, and stakeholder coordination.</p>
-            <ul class="responsibility-list">
-              <li>Generated reports using Microsoft Excel and business analytics tools.</li>
-              <li>Conducted market analysis and business reporting activities.</li>
-              <li>Built practical experience in CRM operations and data-led coordination.</li>
-            </ul>
-          </article>
-        </div>
-
-        <h3 class="subhead reveal">Education</h3>
-        <div class="grid grid-2">
-          <article class="card edu-card reveal">
+        <div class="exp-layout">
+          <div class="timeline reveal">
+            <article class="card timeline-item">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <p class="timeline-meta">EasyStepIn IT Services Pvt Ltd | August 2025 - Present</p>
+              <h3>Digital Marketing Associate</h3>
+              <p>Supporting EasyStepIn and Elev8 through SEO, WordPress, LinkedIn advertising, HubSpot automation, content marketing, product marketing, and AI-powered search initiatives.</p>
+              <ul class="responsibility-list">
+                <li>Manage SEO and website work across the EasyStepIn and Elev8 websites.</li>
+                <li>Support LinkedIn campaigns for B2B lead generation.</li>
+                <li>Write blogs, e-books and whitepapers, and manage landing pages, newsletters, and website content.</li>
+                <li>Build HubSpot email templates and workflows, and work with forms, campaigns, and reporting.</li>
+                <li>Create campaign, event, social, and sales enablement assets.</li>
+                <li>Support AEO, GEO, Boomi World, and InfoComm initiatives.</li>
+                <li>Represented ELEV8 at SHRM UnConference '26 in Hyderabad.</li>
+                <li>Attending the SHRM Annual Conference in Delhi for ELEV8 on 26 and 27 November 2026.</li>
+              </ul>
+            </article>
+            <article class="card timeline-item">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <p class="timeline-meta">EasyStepIn IT Services Pvt Ltd | April 2025 - July 2025</p>
+              <h3>Digital Marketing Intern</h3>
+              <p>Started with social media design and moved into website and SEO work during the internship.</p>
+              <ul class="responsibility-list">
+                <li>Designed social media posts for LinkedIn and Instagram in Canva, following brand guidelines.</li>
+                <li>Supported content calendars and event promotions.</li>
+                <li>Began working on SEO, keyword research, and WordPress updates.</li>
+              </ul>
+            </article>
+            <article class="card timeline-item">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <p class="timeline-meta">Hindustan Unilever Distribution | June 2021 - May 2024</p>
+              <h3>CRM &amp; Sales Executive</h3>
+              <p>Managed CRM and ERP systems for sales operations, customer management, reporting, and stakeholder coordination.</p>
+              <ul class="responsibility-list">
+                <li>Generated reports using Microsoft Excel and business analytics tools.</li>
+                <li>Conducted market analysis and business reporting activities.</li>
+                <li>Built practical experience in CRM operations and data-led coordination.</li>
+              </ul>
+            </article>
+          </div>
+          <aside class="exp-side" aria-label="Education">
+            <h3 class="subhead reveal">Education</h3>
+            <div class="edu-stack">
+              <article class="card edu-card reveal">
             <p class="timeline-meta">2018 - 2020</p>
             <h3>M.Sc. Food Science &amp; Technology</h3>
             <p>Sri Venkateswara University</p>
           </article>
-          <article class="card edu-card reveal">
+              <article class="card edu-card reveal">
             <p class="timeline-meta">2014 - 2018</p>
             <h3>B.Sc. Food Science &amp; Nutrition</h3>
             <p>PJTSA University</p>
           </article>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
