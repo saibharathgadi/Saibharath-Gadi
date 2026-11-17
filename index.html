@@ -1361,6 +1361,142 @@
       display: block;
     }
 
+    .chat-fab {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 70;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 48px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      padding: 0 18px;
+      font-weight: 800;
+      font-size: 14px;
+      box-shadow: 0 18px 45px var(--accent-soft);
+      transition: transform .18s ease, background .18s ease;
+    }
+
+    .chat-fab:hover { transform: translateY(-2px); background: var(--accent-hover); }
+
+    .chat-fab svg { width: 18px; height: 18px; }
+
+    .chat-panel {
+      position: fixed;
+      right: 20px;
+      bottom: 84px;
+      z-index: 70;
+      display: flex;
+      flex-direction: column;
+      width: min(380px, calc(100vw - 32px));
+      max-height: min(560px, calc(100vh - 120px));
+      border: 1px solid var(--panel-border);
+      border-radius: var(--radius);
+      background: var(--panel-strong);
+      backdrop-filter: blur(var(--blur));
+      -webkit-backdrop-filter: blur(var(--blur));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .chat-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .chat-head strong { display: block; font-size: 15px; }
+
+    .chat-head span { color: var(--muted); font-size: 12px; }
+
+    .chat-close {
+      width: 32px;
+      height: 32px;
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--chip);
+      color: var(--text);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .chat-log {
+      display: grid;
+      align-content: start;
+      gap: 10px;
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+    }
+
+    .chat-msg {
+      max-width: 88%;
+      border-radius: 14px;
+      padding: 10px 13px;
+      font-size: 14px;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+
+    .chat-msg.bot {
+      justify-self: start;
+      border: 1px solid var(--panel-border);
+      background: var(--chip);
+      color: var(--soft);
+    }
+
+    .chat-msg.user {
+      justify-self: end;
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .chat-msg a {
+      display: inline-block;
+      margin-top: 6px;
+      color: var(--accent-text);
+      font-weight: 800;
+    }
+
+    .chat-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 0 16px 12px;
+    }
+
+    .chat-chips .chip-btn { min-height: 32px; padding: 5px 12px; font-size: 12px; }
+
+    .chat-form {
+      display: flex;
+      gap: 8px;
+      padding: 12px 16px 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .chat-form .field-control { min-height: 40px; padding: 8px 12px; }
+
+    .chat-form .btn { min-height: 40px; padding: 8px 14px; }
+
+    .chat-note {
+      margin: 0;
+      padding: 0 16px 12px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    @media (max-width: 440px) {
+      .chat-fab span { display: none; }
+      .chat-fab { padding: 0 14px; }
+    }
+
     .reveal {
       opacity: 0;
       transform: translateY(22px);
@@ -2061,6 +2197,25 @@
     </div>
   </footer>
 
+  <button class="chat-fab" id="chatFab" type="button" aria-expanded="false" aria-controls="chatPanel">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"></path></svg>
+    <span>Ask about Sai</span>
+  </button>
+
+  <section class="chat-panel" id="chatPanel" role="dialog" aria-label="Ask about Sai" aria-modal="false" hidden>
+    <div class="chat-head">
+      <div><strong>Ask about Sai</strong><span>Answers come from this page</span></div>
+      <button class="chat-close" id="chatClose" type="button" aria-label="Close chat">&times;</button>
+    </div>
+    <div class="chat-log" id="chatLog" role="log" aria-live="polite"></div>
+    <div class="chat-chips" id="chatChips"></div>
+    <form class="chat-form" id="chatForm" autocomplete="off">
+      <input class="field-control" id="chatInput" type="text" placeholder="Ask a question" aria-label="Your question" maxlength="200">
+      <button class="btn btn-primary" type="submit">Send</button>
+    </form>
+    <p class="chat-note">Runs in your browser. Nothing you type is sent anywhere.</p>
+  </section>
+
   <script>
     const setupNavigation = () => {
       const header = document.querySelector("#siteHeader");
@@ -2311,6 +2466,131 @@
       });
     };
 
+    const setupChatbot = () => {
+      const fab = document.querySelector("#chatFab");
+      const panel = document.querySelector("#chatPanel");
+      const log = document.querySelector("#chatLog");
+      const chips = document.querySelector("#chatChips");
+      const form = document.querySelector("#chatForm");
+      const input = document.querySelector("#chatInput");
+      if (!fab || !panel) return;
+
+      const KB = [
+        { k: ["who", "introduce", "yourself", "sai", "bharath"],
+          a: "Gadi Sai Bharath is a Digital Marketing Associate at EasyStepIn IT Services, based in Marathahalli, Bangalore. He supports B2B SaaS marketing for EasyStepIn and ELEV8 across SEO, WordPress, LinkedIn campaigns, HubSpot automation and content." },
+        { k: ["do", "work", "role", "responsib", "day"],
+          a: "He manages SEO and website work for the EasyStepIn and ELEV8 websites, supports LinkedIn campaigns for B2B lead generation, writes blogs, e-books and whitepapers, builds HubSpot email templates and workflows, and creates campaign, event, social and sales enablement assets.",
+          link: ["See experience", "#experience"] },
+        { k: ["experience", "career", "job", "intern", "company", "history", "unilever"],
+          a: "Digital Marketing Associate at EasyStepIn (August 2025 to present), Digital Marketing Intern there (April to July 2025), and CRM and Sales Executive at Hindustan Unilever Distribution (June 2021 to May 2024).",
+          link: ["See experience", "#experience"] },
+        { k: ["tool", "software", "platform", "stack", "hubspot", "wordpress", "canva", "n8n", "airtable"],
+          a: "HubSpot, WordPress, Elementor, GA4, Search Console, Tag Manager, Looker Studio, LinkedIn Campaign Manager, Google Ads, Meta Ads, SEMrush, Ahrefs, Screaming Frog and Canva, plus n8n, Airtable and AI tools like ChatGPT, Claude, Perplexity and NotebookLM.",
+          link: ["See skills", "#skills"] },
+        { k: ["skill", "seo", "aeo", "geo", "marketing", "good at", "strength"],
+          a: "SEO (technical, on-page, keyword research, schema), AEO and GEO, content and social, paid media (LinkedIn, Google and Meta Ads), HubSpot automation and CRM, and WordPress with analytics.",
+          link: ["See skills", "#skills"] },
+        { k: ["project", "case", "campaign", "portfolio"],
+          a: "Selected work includes Verolyx, EasyStepIn website optimization, Elev8 product marketing and SEO, the AI Intelligence for Manufacturing campaign, Boomi World and InfoComm campaigns, and a social media portfolio.",
+          link: ["See projects", "#projects"] },
+        { k: ["verolyx", "building", "platform", "audit"],
+          a: "Verolyx is an AI platform he is building that runs 360-degree digital marketing, SEO, AEO and GEO audits instantly.",
+          link: ["Visit Verolyx", "https://verolyx.in"] },
+        { k: ["social", "design", "creative", "instagram", "figma", "photoshop", "adobe"],
+          a: "He designs social posts and campaign creatives in Canva and also uses Adobe Express and Figma, for EasyStepIn, Elev8 and his own nutrition page, Aarogya Aahar.",
+          link: ["Social media portfolio", "social-media.html"] },
+        { k: ["certif", "course", "badge", "credential", "google", "gemini"],
+          a: "Certifications include HubSpot Social Media Marketing, Google Fundamentals of Digital Marketing, AI Powered Digital Marketing, Marketing with Canva, and the Gemini Enterprise Agent Ready badge. There are 17 in total.",
+          link: ["See certifications", "#certifications"] },
+        { k: ["education", "degree", "study", "studied", "university", "college", "food"],
+          a: "M.Sc. Food Science and Technology (Sri Venkateswara University, 2018 to 2020) and B.Sc. Food Science and Nutrition (PJTSA University, 2014 to 2018).",
+          link: ["See education", "#experience"] },
+        { k: ["shrm", "event", "conference", "unconference", "delhi", "hyderabad"],
+          a: "He represented ELEV8 at SHRM UnConference '26 in Hyderabad and is attending the SHRM Annual Conference in Delhi for ELEV8 on 26 and 27 November 2026." },
+        { k: ["where", "location", "based", "city", "bangalore", "live"],
+          a: "He is based in Marathahalli, Bangalore." },
+        { k: ["resume", "cv", "download"],
+          a: "Send a short message through the contact form and the resume downloads automatically once it is sent.",
+          link: ["Go to contact form", "#contactForm"] },
+        { k: ["contact", "email", "reach", "linkedin", "phone", "message", "connect", "talk"],
+          a: "The best way is the contact form. You can also email saibharathgadi@gmail.com or message him on LinkedIn.",
+          link: ["Go to contact form", "#contactForm"] },
+        { k: ["hire", "hiring", "available", "availability", "salary", "notice", "freelance", "rate", "ctc", "opportunit", "join"],
+          a: "I can not speak for Sai on that. Please send him a message through the contact form.",
+          link: ["Go to contact form", "#contactForm"] }
+      ];
+      const FALLBACK = { a: "I only know what is on this page, so I can not answer that. Try asking about his experience, skills, tools, projects or how to contact him, or send him a message.", link: ["Go to contact form", "#contactForm"] };
+      const SUGGESTIONS = ["What does he do?", "Which tools does he use?", "Tell me about Verolyx", "How can I get his resume?", "How do I contact him?"];
+
+      const addMessage = (text, who, link) => {
+        const msg = document.createElement("div");
+        msg.className = `chat-msg ${who}`;
+        msg.textContent = text;
+        if (link) {
+          msg.append(document.createElement("br"));
+          const a = document.createElement("a");
+          a.textContent = link[0];
+          a.href = link[1];
+          if (link[1].startsWith("http")) { a.target = "_blank"; a.rel = "noopener"; }
+          else if (link[1].startsWith("#")) a.addEventListener("click", () => close());
+          msg.append(a);
+        }
+        log.append(msg);
+        log.scrollTop = log.scrollHeight;
+      };
+
+      const answer = (question) => {
+        const q = question.toLowerCase();
+        let best = null;
+        let bestScore = 0;
+        KB.forEach((entry) => {
+          const score = entry.k.reduce((n, word) => n + (q.includes(word) ? word.length : 0), 0);
+          if (score > bestScore) { best = entry; bestScore = score; }
+        });
+        return best || FALLBACK;
+      };
+
+      const ask = (question) => {
+        const text = question.trim();
+        if (!text) return;
+        addMessage(text, "user");
+        const reply = answer(text);
+        setTimeout(() => addMessage(reply.a, "bot", reply.link), 250);
+      };
+
+      SUGGESTIONS.forEach((text) => {
+        const chip = document.createElement("button");
+        chip.type = "button";
+        chip.className = "chip-btn";
+        chip.textContent = text;
+        chip.addEventListener("click", () => ask(text));
+        chips.append(chip);
+      });
+
+      function open() {
+        panel.hidden = false;
+        fab.setAttribute("aria-expanded", "true");
+        if (!log.children.length) addMessage("Hi, I can answer questions about Sai's work, skills and experience using what is on this page.", "bot");
+        input.focus();
+      }
+
+      function close() {
+        panel.hidden = true;
+        fab.setAttribute("aria-expanded", "false");
+      }
+
+      fab.addEventListener("click", () => (panel.hidden ? open() : close()));
+      document.querySelector("#chatClose").addEventListener("click", () => { close(); fab.focus(); });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !panel.hidden) { close(); fab.focus(); }
+      });
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        ask(input.value);
+        input.value = "";
+      });
+    };
+
     setupNavigation();
     setupThemeToggle();
     setupScrollSpy();
@@ -2320,6 +2600,7 @@
     setupCertToggle();
     setupCopyEmail();
     setupContactForm();
+    setupChatbot();
 
     document.querySelector("#year").textContent = new Date().getFullYear();
   </script>
