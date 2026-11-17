@@ -49,25 +49,83 @@
           "telephone": "+91-7013264201",
           "url": "https://saibharathgadi.github.io/Saibharath-Gadi/",
           "image": "https://saibharathgadi.github.io/Saibharath-Gadi/assets/profile/saibharath-profile.jpg",
-          "sameAs": ["https://www.linkedin.com/in/gadisaibharath", "https://www.instagram.com/saibharath.official/"],
+          "sameAs": [
+            "https://www.linkedin.com/in/gadisaibharath",
+            "https://www.instagram.com/saibharath.official/"
+          ],
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Marathahalli, Bangalore",
             "addressRegion": "Karnataka",
             "addressCountry": "IN"
           },
-          "knowsAbout": ["SEO", "B2B SaaS Marketing", "HubSpot", "LinkedIn Advertising", "WordPress", "Marketing Automation", "AEO", "GEO"]
+          "knowsAbout": [
+            "SEO",
+            "B2B SaaS Marketing",
+            "HubSpot",
+            "LinkedIn Advertising",
+            "WordPress",
+            "Marketing Automation",
+            "AEO",
+            "GEO"
+          ],
+          "worksFor": {
+            "@type": "Organization",
+            "name": "EasyStepIn IT Services Pvt Ltd"
+          }
         },
         {
-          "@type": "ProfessionalService",
-          "@id": "https://saibharathgadi.github.io/Saibharath-Gadi/#service",
-          "name": "Gadi Sai Bharath Digital Marketing Services",
-          "url": "https://saibharathgadi.github.io/Saibharath-Gadi/",
-          "image": "https://saibharathgadi.github.io/Saibharath-Gadi/assets/profile/saibharath-profile.jpg",
-          "description": "Digital marketing services for B2B brands, including SEO, lead generation, content marketing, WordPress, HubSpot, and LinkedIn campaigns.",
-          "founder": { "@id": "https://saibharathgadi.github.io/Saibharath-Gadi/#person" },
-          "areaServed": "IN",
-          "serviceType": ["SEO", "B2B Lead Generation", "Content Marketing", "LinkedIn Campaigns", "Marketing Automation"]
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Who is Gadi Sai Bharath?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Gadi Sai Bharath is a Digital Marketing Associate at EasyStepIn IT Services, based in Marathahalli, Bangalore. He supports B2B SaaS marketing for EasyStepIn and Elev8 across SEO, WordPress, LinkedIn campaigns, HubSpot automation, content marketing and AI-powered search (AEO and GEO)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What does he work on day to day?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "He manages SEO and website work across the EasyStepIn and Elev8 websites, supports LinkedIn campaigns for B2B lead generation, manages blogs, landing pages and newsletters, works with HubSpot forms, workflows and reporting, and creates campaign, event, social and sales enablement assets."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which tools and platforms does he use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "HubSpot, WordPress, Elementor, GA4, Search Console, Tag Manager, Looker Studio, LinkedIn Campaign Manager, Google Ads, Meta Ads, SEMrush, Ahrefs, Screaming Frog and Canva, plus n8n and Airtable for marketing automation and AI tools such as ChatGPT, Claude, Perplexity and NotebookLM."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What did he do before digital marketing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "He worked as a CRM and Sales Executive at Hindustan Unilever Distribution from June 2021 to May 2024, managing CRM and ERP systems, reporting and market analysis. His degrees are in Food Science: an M.Sc. in Food Science and Technology and a B.Sc. in Food Science and Nutrition."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is Verolyx?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Verolyx is an AI platform he is building that runs 360-degree digital marketing, SEO, AEO and GEO audits instantly. You can visit it at verolyx.in."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How can I contact him or get his resume?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Send a message through the contact form on this page and the resume PDF downloads automatically once the message is sent. You can also email saibharathgadi@gmail.com or message him on LinkedIn."
+              }
+            }
+          ]
         }
       ]
     }
@@ -305,6 +363,39 @@
       color: var(--text);
     }
 
+    .nav-links a.nav-cta,
+    .nav-links a.nav-cta.active {
+      background: var(--accent);
+      color: #fff;
+      padding: 9px 18px;
+      margin-left: 6px;
+      font-weight: 800;
+    }
+
+    .nav-links a.nav-cta:hover,
+    .nav-links a.nav-cta:focus-visible {
+      background: var(--accent-hover);
+      color: #fff;
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 60;
+      height: 3px;
+      pointer-events: none;
+    }
+
+    .scroll-progress span {
+      display: block;
+      height: 100%;
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+    }
+
     .theme-toggle,
     .menu-toggle {
       display: none;
@@ -424,7 +515,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 34px;
+      margin-bottom: 14px;
     }
 
     .btn {
@@ -537,6 +628,80 @@
       object-position: center 28%;
     }
 
+    .hero-note {
+      max-width: 700px;
+      margin: 0 0 34px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .status-chip {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid var(--panel-border);
+      border-radius: var(--radius-sm);
+      background: var(--panel-strong);
+      backdrop-filter: blur(var(--blur-sm));
+      -webkit-backdrop-filter: blur(var(--blur-sm));
+      padding: 12px 14px;
+    }
+
+    .status-chip::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 0 5px rgba(52, 211, 153, .16);
+    }
+
+    .status-chip strong {
+      display: block;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.3;
+    }
+
+    .status-chip span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    section.marquee-band {
+      padding: 0 0 8px;
+    }
+
+    .marquee {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 10px;
+      width: max-content;
+      animation: marquee 55s linear infinite;
+    }
+
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+
+    .marquee .tag { white-space: nowrap; }
+
+    @keyframes marquee {
+      to { transform: translateX(calc(-50% - 5px)); }
+    }
+
+    [hidden] { display: none !important; }
+
     .section-head {
       max-width: 760px;
       margin-bottom: 34px;
@@ -601,15 +766,13 @@
       list-style: none;
     }
 
-    .check-list li,
-    .achievement-list li {
+    .check-list li {
       display: flex;
       gap: 10px;
       color: var(--soft);
     }
 
-    .check-list li::before,
-    .achievement-list li::before {
+    .check-list li::before {
       content: "";
       width: 7px;
       height: 7px;
@@ -620,33 +783,39 @@
       box-shadow: 0 0 0 5px var(--accent-soft);
     }
 
-    .focus-panel {
-      padding: 22px;
-    }
-
-    .focus-panel h3 {
-      margin-bottom: 14px;
+    .facts h3 {
+      margin-bottom: 8px;
       font-size: 18px;
     }
 
-    .focus-list {
+    .facts-list {
       display: grid;
-      gap: 12px;
       margin: 0;
-      padding: 0;
-      list-style: none;
     }
 
-    .focus-list li {
+    .facts-list div {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 12px;
+      padding: 12px 0;
       border-bottom: 1px solid var(--line);
-      padding-bottom: 12px;
-      color: var(--muted);
-      font-size: 14px;
     }
 
-    .focus-list li:last-child {
+    .facts-list div:last-child {
       border-bottom: 0;
       padding-bottom: 0;
+    }
+
+    .facts-list dt {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .facts-list dd {
+      margin: 0;
+      color: var(--soft);
+      font-size: 14px;
     }
 
     .grid {
@@ -662,10 +831,6 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .grid-4 {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
     .card {
       padding: 22px;
       transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
@@ -679,17 +844,15 @@
     }
 
     .skill-card h3,
-    .tool-card h3,
     .cert-card h3,
     .project-card h3,
-    .blog-card h3 {
+    .edu-card h3 {
       margin-bottom: 12px;
       font-size: 18px;
       line-height: 1.3;
     }
 
-    .skill-tags,
-    .tool-grid {
+    .skill-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
@@ -698,8 +861,7 @@
       list-style: none;
     }
 
-    .tag,
-    .tool-card {
+    .tag {
       border: 1px solid var(--panel-border);
       border-radius: 999px;
       background: var(--chip);
@@ -710,75 +872,190 @@
       padding: 9px 11px;
     }
 
-    .tool-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-    }
-
-    .tool-card {
-      min-height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: var(--radius-sm);
-      text-align: center;
-      transition: transform .18s ease, border-color .18s ease, background .18s ease;
-    }
-
-    .tool-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--accent-line);
-      background: var(--accent-soft);
-    }
-
-    .cert-image {
-      height: 178px;
-      margin-bottom: 18px;
-      border: 1px solid var(--panel-border);
-      border-radius: var(--radius-sm);
-      background: #fff;
-      overflow: hidden;
-    }
-
-    .cert-image img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: contain;
-    }
-
-    .cert-group {
-      display: grid;
-      gap: 18px;
-      margin-bottom: 34px;
-    }
-
-    .cert-group:last-child {
-      margin-bottom: 0;
-    }
-
-    .cert-group-title {
+    .subhead {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin: 0;
+      margin: 44px 0 18px;
       color: var(--soft);
       font-size: 18px;
       line-height: 1.3;
     }
 
-    .cert-group-title::after {
+    .subhead::after {
       content: "";
       flex: 1;
       height: 1px;
       background: var(--line);
     }
 
-    .cert-meta {
-      margin: -4px 0 14px;
+    .edu-card h3 { margin-bottom: 6px; }
+
+    .edu-card p:last-child {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 22px;
+    }
+
+    .chip-btn {
+      min-height: 38px;
+      border: 1px solid var(--panel-border);
+      border-radius: 999px;
+      background: var(--panel);
+      backdrop-filter: blur(var(--blur-sm));
+      -webkit-backdrop-filter: blur(var(--blur-sm));
+      color: var(--soft);
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: border-color .18s ease, background .18s ease, color .18s ease;
+    }
+
+    .chip-btn:hover { border-color: var(--accent-line); }
+
+    .chip-btn:focus-visible,
+    .copy-btn:focus-visible,
+    .faq-item summary:focus-visible {
+      outline: 3px solid rgba(129, 140, 248, .36);
+      outline-offset: 3px;
+    }
+
+    .chip-btn.is-active {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .project-card {
+      display: grid;
+      align-content: start;
+      gap: 14px;
+    }
+
+    .project-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .project-cats {
       color: var(--accent-text);
       font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid var(--accent-line);
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--text);
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--success);
+    }
+
+    .project-card h3 { margin-bottom: 0; }
+
+    .project-summary,
+    .project-block p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .project-block strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--text);
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .project-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .project-more {
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+    }
+
+    .project-more summary {
+      cursor: pointer;
+      color: var(--accent-text);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .project-more[open] summary { margin-bottom: 12px; }
+
+    .project-more .project-block + .project-block { margin-top: 12px; }
+
+    .cert-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .issuer-badge {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      flex: 0 0 auto;
+      border: 1px solid var(--accent-line);
+      border-radius: 10px;
+      background: var(--accent-soft);
+      color: var(--accent-text);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .cert-cat {
+      color: var(--muted);
+      font-size: 12px;
       font-weight: 700;
+    }
+
+    .cert-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cert-card h3 { margin-bottom: 8px; }
+
+    .cert-meta {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
     }
 
     .cert-link {
@@ -790,16 +1067,10 @@
       font-weight: 800;
     }
 
-    .cert-card {
+    .show-more-row {
       display: flex;
-      flex-direction: column;
-    }
-
-    .cert-card p,
-    .project-card p,
-    .blog-card p {
-      color: var(--muted);
-      font-size: 14px;
+      justify-content: center;
+      margin-top: 26px;
     }
 
     .timeline {
@@ -846,17 +1117,11 @@
       letter-spacing: .08em;
     }
 
-    .responsibility-list,
-    .achievement-list {
+    .responsibility-list {
       display: grid;
       gap: 10px;
       margin: 16px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .responsibility-list {
-      padding-left: 20px;
+      padding: 0 0 0 20px;
       list-style: disc;
     }
 
@@ -864,57 +1129,52 @@
       color: var(--accent-text);
     }
 
-    .project-card {
+    .faq-list {
       display: grid;
-      gap: 16px;
+      gap: 12px;
+      max-width: 860px;
     }
 
-    .project-block strong {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--text);
-      font-size: 13px;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
-
-    .project-block p {
-      margin: 0;
-    }
-
-    .project-tools {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .achievement-panel {
+    .faq-item {
       border: 1px solid var(--panel-border);
       border-radius: var(--radius);
-      background:
-        linear-gradient(135deg, var(--accent-soft), rgba(34, 211, 238, .08)),
-        var(--panel);
-      backdrop-filter: blur(var(--blur));
-      -webkit-backdrop-filter: blur(var(--blur));
-      box-shadow: var(--shadow), inset 0 1px 0 var(--panel-highlight);
-      padding: clamp(22px, 4vw, 34px);
+      background: var(--panel);
+      backdrop-filter: blur(var(--blur-sm));
+      -webkit-backdrop-filter: blur(var(--blur-sm));
+      transition: border-color .18s ease;
     }
 
-    .blog-card {
-      min-height: 100%;
+    .faq-item[open] { border-color: var(--accent-line); }
+
+    .faq-item summary {
       display: flex;
-      flex-direction: column;
+      align-items: center;
       justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      padding: 18px 22px;
+      font-weight: 700;
+      list-style: none;
     }
 
-    .blog-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 12px;
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: "+";
+      flex: 0 0 auto;
       color: var(--accent-text);
-      font-weight: 800;
-      font-size: 14px;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1;
+      transition: transform .2s ease;
+    }
+
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+
+    .faq-item p {
+      margin: 0;
+      padding: 0 22px 20px;
+      color: var(--muted);
     }
 
     .contact-grid {
@@ -1008,6 +1268,42 @@
       color: #ef4444;
     }
 
+    .contact-method-split { padding: 0; }
+
+    .contact-main {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      min-width: 0;
+      padding: 14px;
+    }
+
+    .copy-btn {
+      flex: 0 0 auto;
+      margin-right: 12px;
+      border: 1px solid var(--panel-border);
+      border-radius: 999px;
+      background: var(--chip);
+      color: var(--text);
+      padding: 7px 14px;
+      font-size: 12px;
+      font-weight: 800;
+      transition: border-color .18s ease, background .18s ease;
+    }
+
+    .copy-btn:hover {
+      border-color: var(--accent-line);
+      background: var(--accent-soft);
+    }
+
+    .form-hint {
+      margin: -4px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
     .site-footer {
       border-top: 1px solid var(--line);
       padding: 32px 0;
@@ -1090,6 +1386,20 @@
         opacity: 1;
         transform: none;
       }
+
+      .marquee {
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
+
+      .marquee-track {
+        animation: none;
+        width: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .marquee-track [aria-hidden="true"] { display: none; }
     }
 
     @media (max-width: 1040px) {
@@ -1128,8 +1438,8 @@
       .profile-card { max-width: 520px; }
       .mini-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .mini-stat:nth-child(2) { border-right: 0; }
-      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .tool-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .nav-links a.nav-cta { margin: 4px 0 0; text-align: center; }
     }
 
     @media (max-width: 760px) {
@@ -1141,7 +1451,6 @@
       .check-list,
       .grid-2,
       .grid-3,
-      .grid-4,
       .form-row {
         grid-template-columns: 1fr;
       }
@@ -1152,7 +1461,8 @@
       }
 
       .mini-stat:last-child { border-bottom: 0; }
-      .tool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .facts-list div { grid-template-columns: 1fr; gap: 2px; }
+      .contact-main { flex-direction: column; align-items: flex-start; gap: 2px; }
       .profile-image { min-height: 380px; }
       .profile-image img { min-height: 380px; }
       .footer-inner {
@@ -1164,7 +1474,6 @@
     @media (max-width: 440px) {
       h1 { font-size: 43px; }
       .brand span:last-child { display: none; }
-      .tool-grid { grid-template-columns: 1fr; }
       .profile-image { min-height: 330px; }
       .profile-image img { min-height: 330px; }
     }
@@ -1179,6 +1488,8 @@
 
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"><span></span></div>
+
   <header class="site-header" id="siteHeader">
     <nav class="nav container" aria-label="Primary navigation">
       <a class="brand" href="#home" aria-label="Gadi Sai Bharath home">
@@ -1188,12 +1499,12 @@
       <div class="nav-actions">
         <div class="nav-links" id="navLinks">
           <a href="#about">About</a>
-          <a href="#skills">Skills</a>
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
           <a href="#certifications">Certifications</a>
           <a href="social-media.html">Social Media</a>
-          <a href="#contact">Contact</a>
+          <a class="nav-cta" href="#contact">Contact</a>
         </div>
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
           <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
@@ -1217,10 +1528,11 @@
           <h2>Digital Marketing Associate</h2>
           <p class="hero-copy">B2B SaaS marketer specializing in SEO, HubSpot automation, LinkedIn lead generation, WordPress, content marketing, and AI-powered search optimization.</p>
           <div class="cta-row" aria-label="Primary actions">
-            <a class="btn btn-primary" href="#projects">View Portfolio</a>
-            <a class="btn btn-secondary" href="#contact">Download Resume</a>
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="#contactForm">Download Resume</a>
             <a class="btn btn-secondary" href="https://www.linkedin.com/in/gadisaibharath" target="_blank" rel="noopener">Connect on LinkedIn</a>
           </div>
+          <p class="hero-note">The resume downloads automatically after you send a short message.</p>
           <div class="mini-stats" aria-label="Professional focus areas">
             <div class="mini-stat">
               <strong>SEO &amp; Websites</strong>
@@ -1246,36 +1558,19 @@
             <div class="profile-image">
               <img src="assets/profile/saibharath-profile.jpg" alt="Gadi Sai Bharath, Digital Marketing Associate" width="1400" height="1400">
             </div>
+            <div class="status-chip">
+              <div>
+                <strong>Currently at EasyStepIn IT Services</strong>
+                <span>Digital Marketing Associate &middot; Bangalore</span>
+              </div>
+            </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <section id="metrics" aria-labelledby="metricsTitle">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="section-kicker">Focus Areas</p>
-          <h2 class="section-title" id="metricsTitle">Where I contribute day to day.</h2>
-        </div>
-        <div class="grid grid-4">
-          <article class="card reveal">
-            <h3>SEO</h3>
-            <p>Technical, on-page and off-page SEO across company websites</p>
-          </article>
-          <article class="card reveal">
-            <h3>Campaigns</h3>
-            <p>LinkedIn campaigns, landing pages and lead-quality review</p>
-          </article>
-          <article class="card reveal">
-            <h3>Creative</h3>
-            <p>Social, event, video and sales enablement assets</p>
-          </article>
-          <article class="card reveal">
-            <h3>2</h3>
-            <p>B2B SaaS Brands Supported</p>
-          </article>
-        </div>
-      </div>
+    <section class="marquee-band" aria-label="Tools and platforms I work with">
+      <div class="marquee"><div class="marquee-track"><span class="tag">HubSpot</span><span class="tag">WordPress</span><span class="tag">Elementor</span><span class="tag">WooCommerce</span><span class="tag">GA4</span><span class="tag">Search Console</span><span class="tag">Tag Manager</span><span class="tag">Looker Studio</span><span class="tag">LinkedIn Campaign Manager</span><span class="tag">Google Ads</span><span class="tag">Meta Ads</span><span class="tag">SEMrush</span><span class="tag">Ahrefs</span><span class="tag">Screaming Frog</span><span class="tag">Canva</span><span class="tag">Microsoft Clarity</span><span class="tag">n8n</span><span class="tag">Airtable</span><span class="tag">ChatGPT</span><span class="tag">Claude</span><span class="tag">Perplexity</span><span class="tag">NotebookLM</span><span class="tag" aria-hidden="true">HubSpot</span><span class="tag" aria-hidden="true">WordPress</span><span class="tag" aria-hidden="true">Elementor</span><span class="tag" aria-hidden="true">WooCommerce</span><span class="tag" aria-hidden="true">GA4</span><span class="tag" aria-hidden="true">Search Console</span><span class="tag" aria-hidden="true">Tag Manager</span><span class="tag" aria-hidden="true">Looker Studio</span><span class="tag" aria-hidden="true">LinkedIn Campaign Manager</span><span class="tag" aria-hidden="true">Google Ads</span><span class="tag" aria-hidden="true">Meta Ads</span><span class="tag" aria-hidden="true">SEMrush</span><span class="tag" aria-hidden="true">Ahrefs</span><span class="tag" aria-hidden="true">Screaming Frog</span><span class="tag" aria-hidden="true">Canva</span><span class="tag" aria-hidden="true">Microsoft Clarity</span><span class="tag" aria-hidden="true">n8n</span><span class="tag" aria-hidden="true">Airtable</span><span class="tag" aria-hidden="true">ChatGPT</span><span class="tag" aria-hidden="true">Claude</span><span class="tag" aria-hidden="true">Perplexity</span><span class="tag" aria-hidden="true">NotebookLM</span></div></div>
     </section>
 
     <section id="about" aria-labelledby="aboutTitle">
@@ -1283,7 +1578,6 @@
         <div class="section-head reveal">
           <p class="section-kicker">About Me</p>
           <h2 class="section-title" id="aboutTitle">Driving Digital Growth Through SEO, Content &amp; Marketing Automation</h2>
-          <p class="section-intro">Hands-on experience supporting B2B SaaS marketing through SEO, paid campaigns, content, websites, automation, and analytics.</p>
         </div>
         <div class="about-grid">
           <article class="content-panel reveal">
@@ -1301,48 +1595,16 @@
             <p>I combine creative production with analytics and structured execution to improve digital experiences, search readiness, and lead-generation outcomes.</p>
           </article>
 
-          <aside class="card focus-panel reveal">
-            <h3>Current Strengths</h3>
-            <ul class="focus-list">
-              <li>SEO and website management across the EasyStepIn and Elev8 websites.</li>
-              <li>LinkedIn campaign support for B2B lead generation.</li>
-              <li>HubSpot forms, workflows, campaigns, email, and reporting.</li>
-              <li>Creatives, videos, presentations, and campaign assets.</li>
-            </ul>
+          <aside class="card facts reveal" aria-label="Quick facts">
+            <h3>Quick facts</h3>
+            <dl class="facts-list">
+              <div><dt>Role</dt><dd>Digital Marketing Associate, EasyStepIn IT Services</dd></div>
+              <div><dt>Based in</dt><dd>Marathahalli, Bangalore</dd></div>
+              <div><dt>Focus</dt><dd>B2B SaaS marketing, SEO, AEO and GEO</dd></div>
+              <div><dt>Education</dt><dd>M.Sc. Food Science &amp; Technology</dd></div>
+            </dl>
           </aside>
         </div>
-      </div>
-    </section>
-
-    <section id="skills" aria-labelledby="skillsTitle">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="section-kicker">Skills</p>
-          <h2 class="section-title" id="skillsTitle">Digital marketing skills organized by practice area.</h2>
-          <p class="section-intro">No percentage bars, just clear capability areas that are easy to scan and update.</p>
-        </div>
-        <div class="grid grid-3" id="skillsGrid"></div>
-      </div>
-    </section>
-
-    <section id="tools" aria-labelledby="toolsTitle">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="section-kicker">Tools & Platforms</p>
-          <h2 class="section-title" id="toolsTitle">Hands-on tools across SEO, CMS, analytics, and campaigns.</h2>
-        </div>
-        <div class="tool-grid reveal" id="toolsGrid"></div>
-      </div>
-    </section>
-
-    <section id="certifications" aria-labelledby="certificationsTitle">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="section-kicker">Certifications</p>
-          <h2 class="section-title" id="certificationsTitle">Verified learning across marketing, web, design, data, and AI.</h2>
-          <p class="section-intro">Select any certificate to view its full credential or source document.</p>
-        </div>
-        <div id="certificationsGrid"></div>
       </div>
     </section>
 
@@ -1350,7 +1612,7 @@
       <div class="container">
         <div class="section-head reveal">
           <p class="section-kicker">Experience</p>
-          <h2 class="section-title" id="experienceTitle">Experience across digital marketing, CRM, and sales operations.</h2>
+          <h2 class="section-title" id="experienceTitle">Digital marketing, CRM and sales experience.</h2>
         </div>
         <div class="timeline reveal">
           <article class="card timeline-item">
@@ -1390,22 +1652,15 @@
             </ul>
           </article>
         </div>
-      </div>
-    </section>
 
-    <section id="education" aria-labelledby="educationTitle">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="section-kicker">Education</p>
-          <h2 class="section-title" id="educationTitle">Academic foundation in food science and technology.</h2>
-        </div>
+        <h3 class="subhead reveal">Education</h3>
         <div class="grid grid-2">
-          <article class="card reveal">
+          <article class="card edu-card reveal">
             <p class="timeline-meta">2018 - 2020</p>
             <h3>M.Sc. Food Science &amp; Technology</h3>
             <p>Sri Venkateswara University</p>
           </article>
-          <article class="card reveal">
+          <article class="card edu-card reveal">
             <p class="timeline-meta">2014 - 2018</p>
             <h3>B.Sc. Food Science &amp; Nutrition</h3>
             <p>PJTSA University</p>
@@ -1417,39 +1672,262 @@
     <section id="projects" aria-labelledby="projectsTitle">
       <div class="container">
         <div class="section-head reveal">
-          <p class="section-kicker">Projects / Case Studies</p>
-          <h2 class="section-title" id="projectsTitle">Selected B2B campaigns and digital growth work.</h2>
-          <p class="section-intro">Projects spanning SEO, product marketing, events, automation, and lead generation.</p>
+          <p class="section-kicker">Projects</p>
+          <h2 class="section-title" id="projectsTitle">Selected work across SEO, campaigns and product.</h2>
+          <p class="section-intro">Filter by the kind of work you care about.</p>
         </div>
-        <div class="grid grid-4" id="projectsGrid"></div>
+        <div class="filter-bar reveal" role="group" aria-label="Filter projects" hidden>
+          <button class="chip-btn is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="chip-btn" type="button" data-filter="seo" aria-pressed="false">SEO</button>
+          <button class="chip-btn" type="button" data-filter="campaigns" aria-pressed="false">Campaigns</button>
+          <button class="chip-btn" type="button" data-filter="creative" aria-pressed="false">Creative</button>
+          <button class="chip-btn" type="button" data-filter="product" aria-pressed="false">Product</button>
+        </div>
+        <div class="grid grid-3" id="projectsGrid">
+          <article class="card project-card reveal" data-cat="product seo">
+            <div class="project-top"><span class="project-cats">Product &middot; SEO</span><span class="badge">Currently building</span></div>
+            <h3>Verolyx</h3>
+            <p class="project-summary">An AI platform that runs 360-degree digital marketing, SEO, AEO and GEO audits instantly, giving teams an AI-powered read on their search and content readiness across traditional and AI-driven search.</p>
+            <div class="project-tools"><span class="tag">SEO</span><span class="tag">AEO</span><span class="tag">GEO</span><span class="tag">AI</span></div>
+            <a class="cert-link" href="https://verolyx.in" target="_blank" rel="noopener">Visit Verolyx</a>
+          </article>
+          <article class="card project-card reveal" data-cat="seo">
+            <div class="project-top"><span class="project-cats">SEO</span></div>
+            <h3>EasyStepIn Website Optimization</h3>
+            <p class="project-summary">Optimized SEO across B2B technology website pages.</p>
+            <div class="project-block"><strong>My role</strong><p>Managed WordPress pages, blogs, landing pages, metadata, content publishing, and Search Console checks.</p></div>
+            <div class="project-tools"><span class="tag">WordPress</span><span class="tag">Search Console</span><span class="tag">GA4</span><span class="tag">SEMrush</span></div>
+            <details class="project-more">
+              <summary>Objective and learnings</summary>
+              <div class="project-block"><strong>Objective</strong><p>Improve metadata, content structure, internal linking, search readiness, and organic visibility.</p></div>
+              <div class="project-block"><strong>Key learnings</strong><p>Built a repeatable approach to combining technical checks, content quality, and publishing accuracy.</p></div>
+            </details>
+          </article>
+          <article class="card project-card reveal" data-cat="seo creative">
+            <div class="project-top"><span class="project-cats">SEO &middot; Creative</span></div>
+            <h3>Elev8 Product Marketing &amp; SEO</h3>
+            <p class="project-summary">Supported product marketing for an employee engagement and recognition platform.</p>
+            <div class="project-block"><strong>My role</strong><p>Optimized product pages, managed blogs and social campaigns, created promotional assets, and supported AEO and GEO.</p></div>
+            <div class="project-tools"><span class="tag">WordPress</span><span class="tag">Canva</span><span class="tag">GA4</span><span class="tag">Search Console</span></div>
+            <details class="project-more">
+              <summary>Objective and learnings</summary>
+              <div class="project-block"><strong>Objective</strong><p>Improve search readiness, strengthen product messaging, and build campaign visibility.</p></div>
+              <div class="project-block"><strong>Key learnings</strong><p>Developed product-focused content connecting employee engagement use cases with search intent.</p></div>
+            </details>
+          </article>
+          <article class="card project-card reveal" data-cat="campaigns">
+            <div class="project-top"><span class="project-cats">Campaigns</span></div>
+            <h3>AI Intelligence for Manufacturing</h3>
+            <p class="project-summary">Supported a B2B campaign targeting technology and manufacturing audiences.</p>
+            <div class="project-block"><strong>My role</strong><p>Supported audience targeting, campaign creative, landing content, lead tracking, and performance review.</p></div>
+            <div class="project-tools"><span class="tag">LinkedIn Campaign Manager</span><span class="tag">HubSpot</span><span class="tag">Canva</span></div>
+            <details class="project-more">
+              <summary>Objective and learnings</summary>
+              <div class="project-block"><strong>Objective</strong><p>Generate relevant awareness and leads through focused LinkedIn promotion and campaign assets.</p></div>
+              <div class="project-block"><strong>Key learnings</strong><p>Learned how audience targeting, landing content and lead-quality review work together in a B2B campaign.</p></div>
+            </details>
+          </article>
+          <article class="card project-card reveal" data-cat="campaigns creative">
+            <div class="project-top"><span class="project-cats">Campaigns &middot; Creative</span></div>
+            <h3>Boomi World &amp; InfoComm Campaigns</h3>
+            <p class="project-summary">Supported international event marketing and partner promotion initiatives.</p>
+            <div class="project-block"><strong>My role</strong><p>Created campaign materials, updated landing content, supported coordination, and prepared social promotions.</p></div>
+            <div class="project-tools"><span class="tag">HubSpot</span><span class="tag">Canva</span><span class="tag">LinkedIn</span><span class="tag">WordPress</span></div>
+            <details class="project-more">
+              <summary>Objective and learnings</summary>
+              <div class="project-block"><strong>Objective</strong><p>Maintain consistent campaign messaging across website, email, social, and event assets.</p></div>
+              <div class="project-block"><strong>Key learnings</strong><p>Strengthened cross-channel execution and event-focused B2B communication.</p></div>
+            </details>
+          </article>
+          <article class="card project-card reveal" data-cat="creative">
+            <div class="project-top"><span class="project-cats">Creative</span></div>
+            <h3>Social Media &amp; Creative Portfolio</h3>
+            <p class="project-summary">Social content, campaign creatives and design work across EasyStepIn, Elev8 and Aarogya Aahar.</p>
+            <div class="project-block"><strong>My role</strong><p>Designed social media posts and campaign creatives in Canva for LinkedIn and Instagram, following brand guidelines.</p></div>
+            <div class="project-tools"><span class="tag">Canva</span><span class="tag">Adobe Express</span><span class="tag">Figma</span></div>
+            <a class="cert-link" href="social-media.html">View social media portfolio</a>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="building" aria-labelledby="buildingTitle">
+    <section id="skills" aria-labelledby="skillsTitle">
       <div class="container">
-        <article class="content-panel reveal">
-          <p class="section-kicker">Currently Building</p>
-          <h2 class="section-title" id="buildingTitle">Verolyx - an AI platform for SEO, AEO &amp; GEO audits.</h2>
-          <p>Verolyx runs comprehensive 360-degree digital marketing, SEO, AEO, and GEO audits instantly, giving teams an AI-powered read on their search and content readiness across traditional and AI-driven search.</p>
-          <a class="btn btn-secondary" href="https://verolyx.in" target="_blank" rel="noopener">Visit Verolyx</a>
-        </article>
+        <div class="section-head reveal">
+          <p class="section-kicker">Skills</p>
+          <h2 class="section-title" id="skillsTitle">Skills by practice area.</h2>
+        </div>
+        <div class="grid grid-3" id="skillsGrid">
+          <article class="card skill-card reveal">
+            <h3>SEO &amp; AI Search</h3>
+            <ul class="skill-tags"><li class="tag">Technical SEO</li><li class="tag">On-Page SEO</li><li class="tag">Keyword Research</li><li class="tag">Internal Linking</li><li class="tag">Schema Markup</li><li class="tag">AEO</li><li class="tag">GEO</li><li class="tag">SEMrush</li><li class="tag">Ahrefs</li><li class="tag">Screaming Frog</li></ul>
+          </article>
+          <article class="card skill-card reveal">
+            <h3>Content &amp; Social</h3>
+            <ul class="skill-tags"><li class="tag">Content Strategy</li><li class="tag">Blog Writing</li><li class="tag">Copywriting</li><li class="tag">Social Media Marketing</li><li class="tag">Canva Design</li></ul>
+          </article>
+          <article class="card skill-card reveal">
+            <h3>Paid Media &amp; Leads</h3>
+            <ul class="skill-tags"><li class="tag">LinkedIn Ads</li><li class="tag">Google Ads</li><li class="tag">Meta Ads</li><li class="tag">Audience Targeting</li><li class="tag">Campaign Analysis</li><li class="tag">Landing Page Optimization</li></ul>
+          </article>
+          <article class="card skill-card reveal">
+            <h3>Automation &amp; CRM</h3>
+            <ul class="skill-tags"><li class="tag">HubSpot Marketing Hub</li><li class="tag">HubSpot CRM</li><li class="tag">Email Marketing</li><li class="tag">Workflows</li><li class="tag">Contact Management</li><li class="tag">n8n</li><li class="tag">Airtable</li></ul>
+          </article>
+          <article class="card skill-card reveal">
+            <h3>Web &amp; Analytics</h3>
+            <ul class="skill-tags"><li class="tag">WordPress</li><li class="tag">Elementor</li><li class="tag">WooCommerce</li><li class="tag">UI/UX Design</li><li class="tag">Basic HTML &amp; CSS</li><li class="tag">GA4</li><li class="tag">Search Console</li><li class="tag">Tag Manager</li><li class="tag">Looker Studio</li><li class="tag">Microsoft Clarity</li></ul>
+          </article>
+          <article class="card skill-card reveal">
+            <h3>AI &amp; Productivity</h3>
+            <ul class="skill-tags"><li class="tag">ChatGPT</li><li class="tag">Claude</li><li class="tag">Perplexity</li><li class="tag">NotebookLM</li><li class="tag">Microsoft Excel</li></ul>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="achievements" aria-labelledby="achievementsTitle">
+    <section id="certifications" aria-labelledby="certificationsTitle">
       <div class="container">
-        <div class="achievement-panel reveal">
-          <div class="section-head">
-            <p class="section-kicker">Achievements</p>
-            <h2 class="section-title" id="achievementsTitle">Credible contributions and growth areas.</h2>
-          </div>
-          <ul class="achievement-list">
-            <li>Optimized SEO and content across two company websites</li>
-            <li>Supported LinkedIn campaigns for B2B lead generation</li>
-            <li>Created marketing and sales enablement assets for campaigns and events</li>
-            <li>Supported international campaigns including Boomi World and InfoComm</li>
-            <li>Contributed to AEO and GEO search optimization initiatives</li>
-          </ul>
+        <div class="section-head reveal">
+          <p class="section-kicker">Certifications</p>
+          <h2 class="section-title" id="certificationsTitle">Certified in marketing, web, design and AI.</h2>
+          <p class="section-intro">Select any certificate to view the full credential.</p>
+        </div>
+        <div class="grid grid-3" id="certGrid">
+          <article class="card cert-card reveal">
+            <div class="cert-top"><span class="issuer-badge" aria-hidden="true">HS</span><span class="cert-cat">Digital Marketing</span></div>
+            <h3>Social Media Marketing Certification</h3>
+            <p class="cert-meta">HubSpot Academy | Valid February 2026 - March 2028</p>
+            <a class="cert-link" href="assets/certificates/previews/hubspot-social-media.jpg" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="card cert-card reveal">
+            <div class="cert-top"><span class="issuer-badge" aria-hidden="true">G</span><span class="cert-cat">Digital Marketing</span></div>
+            <h3>Fundamentals of Digital Marketing</h3>
+            <p class="cert-meta">Google | February 2025</p>
+            <a class="cert-link" href="assets/certificates/previews/google-digital-marketing.jpg" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="card cert-card reveal">
+            <div class="cert-top"><span class="issuer-badge" aria-hidden="true">FL</span><span class="cert-cat">Digital Marketing</span></div>
+            <h3>AI Powered Digital Marketing Online Training</h3>
+            <p class="cert-meta">Frontlines EduTech Private Limited | May 2025</p>
+            <a class="cert-link" href="assets/certificates/frontlines-ai-digital-marketing.png" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="card cert-card reveal">
+            <div class="cert-top"><span class="issuer-badge" aria-hidden="true">Cv</span><span class="cert-cat">Design &amp; AI</span></div>
+            <h3>Marketing with Canva</h3>
+            <p class="cert-meta">Canva Design School | May 2025</p>
+            <a class="cert-link" href="assets/certificates/marketing-with-canva.pdf" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="card cert-card reveal">
+            <div class="cert-top"><span class="issuer-badge" aria-hidden="true">C</span><span class="cert-cat">Web &amp; Data</span></div>
+            <h3>Use WordPress to Create a Blog for Your Business</h3>
+            <p class="cert-meta">Coursera | January 2025</p>
+            <a class="cert-link" href="https://coursera.org/verify/HSPV418L3NSE" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="card cert-card reveal">
+            <div class="cert-top"><span class="issuer-badge" aria-hidden="true">FL</span><span class="cert-cat">Design &amp; AI</span></div>
+            <h3>AI Powered Graphic Design</h3>
+            <p class="cert-meta">Frontlines EduTech Private Limited | May 2026</p>
+            <a class="cert-link" href="assets/certificates/frontlines-ai-graphic-design.png" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="card cert-card reveal" data-extra>
+            <div class="cert-top"><span class="issuer-badge" aria-hidden="true">C</span><span class="cert-cat">Web &amp; Data</span></div>
+            <h3>Build a Free Website with WordPress</h3>
+            <p class="cert-meta">Coursera | January 2025</p>
+            <a class="cert-link" href="https://coursera.org/verify/KC4URFTMBLRP" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="card cert-card reveal" data-extra>
+            <div class="cert-top"><span class="issuer-badge" aria-hidden="true">Cv</span><span class="cert-cat">Design &amp; AI</span></div>
+            <h3>Canva for Work</h3>
+            <p class="cert-meta">Canva Design School | May 2025</p>
+            <a class="cert-link" href="assets/certificates/canva-for-work.pdf" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="card cert-card reveal" data-extra>
+            <div class="cert-top"><span class="issuer-badge" aria-hidden="true">NW</span><span class="cert-cat">Web &amp; Data</span></div>
+            <h3>Build Your Own Static Website</h3>
+            <p class="cert-meta">NxtWave | February 2023</p>
+            <a class="cert-link" href="assets/certificates/nxtwave-static-website.pdf" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="card cert-card reveal" data-extra>
+            <div class="cert-top"><span class="issuer-badge" aria-hidden="true">NW</span><span class="cert-cat">Web &amp; Data</span></div>
+            <h3>Build Your Own Responsive Website</h3>
+            <p class="cert-meta">NxtWave | March 2023</p>
+            <a class="cert-link" href="assets/certificates/nxtwave-responsive-website.pdf" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="card cert-card reveal" data-extra>
+            <div class="cert-top"><span class="issuer-badge" aria-hidden="true">NW</span><span class="cert-cat">Web &amp; Data</span></div>
+            <h3>Introduction to Databases</h3>
+            <p class="cert-meta">NxtWave | March 2023</p>
+            <a class="cert-link" href="assets/certificates/nxtwave-introduction-to-databases.pdf" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="card cert-card reveal" data-extra>
+            <div class="cert-top"><span class="issuer-badge" aria-hidden="true">SL</span><span class="cert-cat">Productivity</span></div>
+            <h3>Introduction to MS Excel</h3>
+            <p class="cert-meta">Simplilearn SkillUp | February 2025</p>
+            <a class="cert-link" href="assets/certificates/previews/simplilearn-excel.jpg" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="card cert-card reveal" data-extra>
+            <div class="cert-top"><span class="issuer-badge" aria-hidden="true">C</span><span class="cert-cat">Productivity</span></div>
+            <h3>Getting Started with Microsoft Excel</h3>
+            <p class="cert-meta">Coursera | January 2025</p>
+            <a class="cert-link" href="https://coursera.org/verify/TUMBQ6DGKPWT" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="card cert-card reveal" data-extra>
+            <div class="cert-top"><span class="issuer-badge" aria-hidden="true">Cv</span><span class="cert-cat">Design &amp; AI</span></div>
+            <h3>The Field Guide to Human-Centered Design</h3>
+            <p class="cert-meta">Canva Design School | May 2025</p>
+            <a class="cert-link" href="assets/certificates/human-centered-design.pdf" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="card cert-card reveal" data-extra>
+            <div class="cert-top"><span class="issuer-badge" aria-hidden="true">Cv</span><span class="cert-cat">Design &amp; AI</span></div>
+            <h3>AI in the Classroom</h3>
+            <p class="cert-meta">Canva Design School | May 2025</p>
+            <a class="cert-link" href="assets/certificates/ai-in-the-classroom.pdf" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="card cert-card reveal" data-extra>
+            <div class="cert-top"><span class="issuer-badge" aria-hidden="true">NW</span><span class="cert-cat">Productivity</span></div>
+            <h3>XPM 4.0 Fundamentals</h3>
+            <p class="cert-meta">NxtWave | March 2023</p>
+            <a class="cert-link" href="assets/certificates/nxtwave-xpm-fundamentals.pdf" target="_blank" rel="noopener">View certificate</a>
+          </article>
+        </div>
+        <div class="show-more-row">
+          <button class="btn btn-secondary" id="certToggle" type="button" aria-expanded="false" aria-controls="certGrid" hidden>Show all 16 certifications</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" aria-labelledby="faqTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">FAQ</p>
+          <h2 class="section-title" id="faqTitle">Frequently asked questions.</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary>Who is Gadi Sai Bharath?</summary>
+            <p>Gadi Sai Bharath is a Digital Marketing Associate at EasyStepIn IT Services, based in Marathahalli, Bangalore. He supports B2B SaaS marketing for EasyStepIn and Elev8 across SEO, WordPress, LinkedIn campaigns, HubSpot automation, content marketing and AI-powered search (AEO and GEO).</p>
+          </details>
+          <details class="faq-item">
+            <summary>What does he work on day to day?</summary>
+            <p>He manages SEO and website work across the EasyStepIn and Elev8 websites, supports LinkedIn campaigns for B2B lead generation, manages blogs, landing pages and newsletters, works with HubSpot forms, workflows and reporting, and creates campaign, event, social and sales enablement assets.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Which tools and platforms does he use?</summary>
+            <p>HubSpot, WordPress, Elementor, GA4, Search Console, Tag Manager, Looker Studio, LinkedIn Campaign Manager, Google Ads, Meta Ads, SEMrush, Ahrefs, Screaming Frog and Canva, plus n8n and Airtable for marketing automation and AI tools such as ChatGPT, Claude, Perplexity and NotebookLM.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What did he do before digital marketing?</summary>
+            <p>He worked as a CRM and Sales Executive at Hindustan Unilever Distribution from June 2021 to May 2024, managing CRM and ERP systems, reporting and market analysis. His degrees are in Food Science: an M.Sc. in Food Science and Technology and a B.Sc. in Food Science and Nutrition.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is Verolyx?</summary>
+            <p>Verolyx is an AI platform he is building that runs 360-degree digital marketing, SEO, AEO and GEO audits instantly. You can visit it at verolyx.in.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How can I contact him or get his resume?</summary>
+            <p>Send a message through the contact form on this page and the resume PDF downloads automatically once the message is sent. You can also email saibharathgadi@gmail.com or message him on LinkedIn.</p>
+          </details>
         </div>
       </div>
     </section>
@@ -1461,10 +1939,13 @@
           <h2 class="section-title" id="contactTitle">Let us connect about digital marketing work.</h2>
           <p class="section-intro">Reach out about B2B marketing, SEO, HubSpot, automation, or just to exchange ideas.</p>
           <div class="contact-methods">
-            <a class="contact-method" href="mailto:saibharathgadi@gmail.com">
-              <strong>Email</strong>
-              <span>saibharathgadi@gmail.com</span>
-            </a>
+            <div class="contact-method contact-method-split">
+              <a class="contact-main" href="mailto:saibharathgadi@gmail.com">
+                <strong>Email</strong>
+                <span>saibharathgadi@gmail.com</span>
+              </a>
+              <button class="copy-btn" id="copyEmail" type="button" data-email="saibharathgadi@gmail.com" aria-label="Copy email address" aria-live="polite">Copy</button>
+            </div>
             <a class="contact-method" href="tel:+917013264201">
               <strong>Phone</strong>
               <span>+91 7013264201</span>
@@ -1521,6 +2002,7 @@
             <label for="message">Message <span class="required-star" aria-hidden="true">*</span></label>
             <textarea class="field-control" id="message" name="message" placeholder="Write your message" required></textarea>
           </div>
+          <p class="form-hint">Your resume downloads automatically after you send your message.</p>
           <button class="btn btn-primary" type="submit">Send Message</button>
           <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
         </form>
@@ -1572,262 +2054,6 @@
   </footer>
 
   <script>
-    const portfolioData = {
-      skills: [
-        { category: "SEO & AI Search", items: ["Technical SEO", "On-Page SEO", "Keyword Research", "Schema Markup", "AEO", "GEO"] },
-        { category: "Content & Social", items: ["Content Strategy", "Blog Writing", "Copywriting", "Social Media Marketing", "Canva Design"] },
-        { category: "Paid Media & Leads", items: ["LinkedIn Ads", "Google Ads", "Meta Ads", "Audience Targeting", "Campaign Analysis"] },
-        { category: "Automation & CRM", items: ["HubSpot Marketing Hub", "HubSpot CRM", "Email Marketing", "Workflows", "Contact Management"] },
-        { category: "Web & Analytics", items: ["WordPress", "Elementor", "UI/UX Design", "GA4", "Search Console", "Tag Manager", "Looker Studio"] }
-      ],
-      tools: ["HubSpot", "WordPress", "Elementor", "WooCommerce", "GA4", "Search Console", "Tag Manager", "Looker Studio", "LinkedIn Campaign Manager", "Google Ads", "Meta Ads", "SEMrush", "Ahrefs", "Screaming Frog", "Canva", "Microsoft Clarity", "n8n", "Airtable", "ChatGPT", "Claude", "Perplexity", "NotebookLM"],
-      certifications: [
-        {
-          title: "Social Media Marketing Certification",
-          issuer: "HubSpot Academy",
-          date: "Valid February 2026 - March 2028",
-          group: "Digital Marketing Certifications",
-          image: "assets/certificates/previews/hubspot-social-media.jpg",
-          href: "assets/certificates/previews/hubspot-social-media.jpg"
-        },
-        {
-          title: "Fundamentals of Digital Marketing",
-          issuer: "Google",
-          date: "February 2025",
-          group: "Digital Marketing Certifications",
-          image: "assets/certificates/previews/google-digital-marketing.jpg",
-          href: "assets/certificates/previews/google-digital-marketing.jpg"
-        },
-        {
-          title: "AI Powered Digital Marketing Online Training",
-          issuer: "Frontlines EduTech Private Limited",
-          date: "May 2025",
-          group: "Digital Marketing Certifications",
-          image: "assets/certificates/frontlines-ai-digital-marketing.png",
-          href: "assets/certificates/frontlines-ai-digital-marketing.png"
-        },
-        {
-          title: "Use WordPress to Create a Blog for Your Business",
-          issuer: "Coursera",
-          date: "January 2025",
-          group: "Web, WordPress & Data Certifications",
-          image: "assets/certificates/previews/coursera-wordpress-blog.jpg",
-          href: "https://coursera.org/verify/HSPV418L3NSE"
-        },
-        {
-          title: "Build a Free Website with WordPress",
-          issuer: "Coursera",
-          date: "January 2025",
-          group: "Web, WordPress & Data Certifications",
-          image: "assets/certificates/previews/coursera-free-wordpress-website.jpg",
-          href: "https://coursera.org/verify/KC4URFTMBLRP"
-        },
-        {
-          title: "Marketing with Canva",
-          issuer: "Canva Design School",
-          date: "May 2025",
-          group: "Design & AI Certifications",
-          image: "assets/certificates/previews/marketing-with-canva.jpg",
-          href: "assets/certificates/marketing-with-canva.pdf"
-        },
-        {
-          title: "Canva for Work",
-          issuer: "Canva Design School",
-          date: "May 2025",
-          group: "Design & AI Certifications",
-          image: "assets/certificates/previews/canva-for-work.jpg",
-          href: "assets/certificates/canva-for-work.pdf"
-        },
-        {
-          title: "AI Powered Graphic Design",
-          issuer: "Frontlines EduTech Private Limited",
-          date: "May 2026",
-          group: "Design & AI Certifications",
-          image: "assets/certificates/frontlines-ai-graphic-design.png",
-          href: "assets/certificates/frontlines-ai-graphic-design.png"
-        },
-        {
-          title: "Build Your Own Static Website",
-          issuer: "NxtWave",
-          date: "February 2023",
-          group: "Web, WordPress & Data Certifications",
-          image: "assets/certificates/previews/nxtwave-static-website.jpg",
-          href: "assets/certificates/nxtwave-static-website.pdf"
-        },
-        {
-          title: "Build Your Own Responsive Website",
-          issuer: "NxtWave",
-          date: "March 2023",
-          group: "Web, WordPress & Data Certifications",
-          image: "assets/certificates/previews/nxtwave-responsive-website.jpg",
-          href: "assets/certificates/nxtwave-responsive-website.pdf"
-        },
-        {
-          title: "Introduction to Databases",
-          issuer: "NxtWave",
-          date: "March 2023",
-          group: "Web, WordPress & Data Certifications",
-          image: "assets/certificates/previews/nxtwave-introduction-to-databases.jpg",
-          href: "assets/certificates/nxtwave-introduction-to-databases.pdf"
-        },
-        {
-          title: "Introduction to MS Excel",
-          issuer: "Simplilearn SkillUp",
-          date: "February 2025",
-          group: "Productivity & Operations Certifications",
-          image: "assets/certificates/previews/simplilearn-excel.jpg",
-          href: "assets/certificates/previews/simplilearn-excel.jpg"
-        },
-        {
-          title: "Getting Started with Microsoft Excel",
-          issuer: "Coursera",
-          date: "January 2025",
-          group: "Productivity & Operations Certifications",
-          image: "assets/certificates/previews/coursera-microsoft-excel.jpg",
-          href: "https://coursera.org/verify/TUMBQ6DGKPWT"
-        },
-        {
-          title: "The Field Guide to Human-Centered Design",
-          issuer: "Canva Design School",
-          date: "May 2025",
-          group: "Design & AI Certifications",
-          image: "assets/certificates/previews/human-centered-design.jpg",
-          href: "assets/certificates/human-centered-design.pdf"
-        },
-        {
-          title: "AI in the Classroom",
-          issuer: "Canva Design School",
-          date: "May 2025",
-          group: "Design & AI Certifications",
-          image: "assets/certificates/previews/ai-in-the-classroom.jpg",
-          href: "assets/certificates/ai-in-the-classroom.pdf"
-        },
-        {
-          title: "XPM 4.0 Fundamentals",
-          issuer: "NxtWave",
-          date: "March 2023",
-          group: "Productivity & Operations Certifications",
-          image: "assets/certificates/previews/nxtwave-xpm-fundamentals.jpg",
-          href: "assets/certificates/nxtwave-xpm-fundamentals.pdf"
-        }
-      ],
-      projects: [
-        {
-          title: "EasyStepIn Website Optimization",
-          overview: "Optimized SEO across B2B technology website pages.",
-          objectives: "Improve metadata, content structure, internal linking, search readiness, and organic visibility.",
-          responsibilities: "Managed WordPress pages, blogs, landing pages, metadata, content publishing, and Search Console checks.",
-          tools: ["WordPress", "Search Console", "GA4", "SEMrush"],
-          learnings: "Built a repeatable approach to combining technical checks, content quality, and publishing accuracy."
-        },
-        {
-          title: "AI Intelligence for Manufacturing",
-          overview: "Supported a B2B campaign targeting technology and manufacturing audiences.",
-          objectives: "Generate relevant awareness and leads through focused LinkedIn promotion and campaign assets.",
-          responsibilities: "Supported audience targeting, campaign creative, landing content, lead tracking, and performance review.",
-          tools: ["LinkedIn Campaign Manager", "HubSpot", "Canva"],
-          learnings: "Learned how audience targeting, landing content and lead-quality review work together in a B2B campaign."
-        },
-        {
-          title: "Elev8 Product Marketing & SEO",
-          overview: "Supported product marketing for an employee engagement and recognition platform.",
-          objectives: "Improve search readiness, strengthen product messaging, and build campaign visibility.",
-          responsibilities: "Optimized product pages, managed blogs and social campaigns, created promotional assets, and supported AEO and GEO.",
-          tools: ["WordPress", "Canva", "GA4", "Search Console"],
-          learnings: "Developed product-focused content connecting employee engagement use cases with search intent."
-        },
-        {
-          title: "Boomi World & InfoComm Campaigns",
-          overview: "Supported international event marketing and partner promotion initiatives.",
-          objectives: "Maintain consistent campaign messaging across website, email, social, and event assets.",
-          responsibilities: "Created campaign materials, updated landing content, supported coordination, and prepared social promotions.",
-          tools: ["HubSpot", "Canva", "LinkedIn", "WordPress"],
-          learnings: "Strengthened cross-channel execution and event-focused B2B communication."
-        }
-      ]
-    };
-
-    const createElement = (tag, className, text) => {
-      const element = document.createElement(tag);
-      if (className) element.className = className;
-      if (text) element.textContent = text;
-      return element;
-    };
-
-    const renderSkills = () => {
-      const grid = document.querySelector("#skillsGrid");
-      portfolioData.skills.forEach((skill) => {
-        const card = createElement("article", "card skill-card reveal");
-        card.append(createElement("h3", "", skill.category));
-        const list = createElement("ul", "skill-tags");
-        skill.items.forEach((item) => list.append(createElement("li", "tag", item)));
-        card.append(list);
-        grid.append(card);
-      });
-    };
-
-    const renderTools = () => {
-      const grid = document.querySelector("#toolsGrid");
-      portfolioData.tools.forEach((tool) => grid.append(createElement("div", "tool-card", tool)));
-    };
-
-    const renderCertifications = () => {
-      const grid = document.querySelector("#certificationsGrid");
-      const groups = [...new Set(portfolioData.certifications.map((certification) => certification.group))];
-      groups.forEach((group) => {
-        const section = createElement("div", "cert-group");
-        section.append(createElement("h3", "cert-group-title", group));
-        const cards = createElement("div", "grid grid-3");
-        portfolioData.certifications
-          .filter((certification) => certification.group === group)
-          .forEach((certification) => {
-            const card = createElement("article", "card cert-card reveal");
-            const imageWrap = createElement("div", "cert-image");
-            const image = document.createElement("img");
-            image.src = certification.image;
-            image.alt = `${certification.title} certificate from ${certification.issuer}`;
-            image.loading = "lazy";
-            image.width = 1000;
-            image.height = 700;
-            imageWrap.append(image);
-            card.append(imageWrap);
-            card.append(createElement("h3", "", certification.title));
-            card.append(createElement("p", "cert-meta", `${certification.issuer} | ${certification.date}`));
-            const link = createElement("a", "cert-link", "View certificate");
-            link.href = certification.href;
-            link.target = "_blank";
-            link.rel = "noopener";
-            card.append(link);
-            cards.append(card);
-          });
-        section.append(cards);
-        grid.append(section);
-      });
-    };
-
-    const renderProjects = () => {
-      const grid = document.querySelector("#projectsGrid");
-      portfolioData.projects.forEach((project) => {
-        const card = createElement("article", "card project-card reveal");
-        card.append(createElement("h3", "", project.title));
-
-        ["overview", "objectives", "responsibilities", "learnings"].forEach((key) => {
-          const block = createElement("div", "project-block");
-          block.append(createElement("strong", "", key === "learnings" ? "Key Learnings" : key));
-          block.append(createElement("p", "", project[key]));
-          card.append(block);
-        });
-
-        const toolsBlock = createElement("div", "project-block");
-        toolsBlock.append(createElement("strong", "", "Tools Used"));
-        const tools = createElement("div", "project-tools");
-        project.tools.forEach((tool) => tools.append(createElement("span", "tag", tool)));
-        toolsBlock.append(tools);
-        card.append(toolsBlock);
-        grid.append(card);
-      });
-    };
-
     const setupNavigation = () => {
       const header = document.querySelector("#siteHeader");
       const menuToggle = document.querySelector("#menuToggle");
@@ -1979,14 +2205,112 @@
       });
     };
 
-    renderSkills();
-    renderTools();
-    renderCertifications();
-    renderProjects();
+    const setupScrollProgress = () => {
+      const bar = document.querySelector("#scrollProgress span");
+      if (!bar) return;
+      let ticking = false;
+
+      const update = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+        bar.style.transform = `scaleX(${progress})`;
+        ticking = false;
+      };
+
+      const onScroll = () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(update);
+        }
+      };
+
+      update();
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll);
+    };
+
+    const setupProjectFilter = () => {
+      const bar = document.querySelector(".filter-bar");
+      const buttons = [...document.querySelectorAll(".filter-bar [data-filter]")];
+      const cards = [...document.querySelectorAll("#projectsGrid .project-card")];
+      if (!bar || !buttons.length) return;
+
+      const apply = (filter) => {
+        buttons.forEach((button) => {
+          const active = button.dataset.filter === filter;
+          button.classList.toggle("is-active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+        cards.forEach((card) => {
+          const match = filter === "all" || card.dataset.cat.split(" ").includes(filter);
+          card.hidden = !match;
+          if (match) card.classList.add("visible");
+        });
+      };
+
+      buttons.forEach((button) => button.addEventListener("click", () => apply(button.dataset.filter)));
+      bar.hidden = false;
+    };
+
+    const setupCertToggle = () => {
+      const toggle = document.querySelector("#certToggle");
+      const extras = [...document.querySelectorAll("#certGrid [data-extra]")];
+      if (!toggle || !extras.length) return;
+      const total = document.querySelectorAll("#certGrid .cert-card").length;
+
+      extras.forEach((card) => { card.hidden = true; });
+      toggle.hidden = false;
+
+      toggle.addEventListener("click", () => {
+        const expand = toggle.getAttribute("aria-expanded") !== "true";
+        extras.forEach((card) => {
+          card.hidden = !expand;
+          if (expand) card.classList.add("visible");
+        });
+        toggle.setAttribute("aria-expanded", String(expand));
+        toggle.textContent = expand ? "Show fewer" : `Show all ${total} certifications`;
+      });
+    };
+
+    const setupCopyEmail = () => {
+      const button = document.querySelector("#copyEmail");
+      if (!button) return;
+      const email = button.dataset.email;
+      const label = button.textContent;
+
+      const flash = (text) => {
+        button.textContent = text;
+        setTimeout(() => { button.textContent = label; }, 1800);
+      };
+
+      button.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(email);
+          flash("Copied");
+        } catch (error) {
+          const area = document.createElement("textarea");
+          area.value = email;
+          area.setAttribute("readonly", "");
+          area.style.position = "fixed";
+          area.style.opacity = "0";
+          document.body.append(area);
+          area.select();
+          let copied = false;
+          try { copied = document.execCommand("copy"); } catch (e) {}
+          area.remove();
+          flash(copied ? "Copied" : "Copy failed");
+        }
+      });
+    };
+
     setupNavigation();
     setupThemeToggle();
     setupScrollSpy();
+    setupScrollProgress();
     setupReveal();
+    setupProjectFilter();
+    setupCertToggle();
+    setupCopyEmail();
     setupContactForm();
 
     document.querySelector("#year").textContent = new Date().getFullYear();
